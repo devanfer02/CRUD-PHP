@@ -2,13 +2,7 @@
     include 'handlers/functions.php';
     if(isset($_POST["submit"]))
     {
-        $nim = $_POST["nim"];
-        $nama = $_POST["nama"];
-        $prodi = $_POST["prodi"];
-        $email = $_POST["email"];
-        $gambar = $_POST["gambar"]; 
-
-        add("INSERT INTO student VALUES('','$nama','$nim','$prodi','$email','$gambar')");
+        add($_POST); 
     }
 ?>
 <!DOCTYPE html>

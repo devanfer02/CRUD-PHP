@@ -10,8 +10,8 @@
                 </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link" aria-current="page" href="index.php">Home</a>
-                    <a class="nav-link" href="add.php">Add Data</a>
+                    <a class="nav-link" aria-current="page" href="index.php">List Students</a>
+                    <a class="nav-link" href="add.php">Add Student</a>
                     </div>
                 </div>
             </div>
