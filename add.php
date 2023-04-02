@@ -4,6 +4,25 @@
     {
         $isSuccess = add($_POST); 
     }
+    $universities = array(
+        "Universitas Bina Nusantara",
+        "Politeknik Negeri Surabaya",
+        "Politeknik Negeri Malang",
+        "Univeristas Telkom",
+        "Universitas Brawijaya",
+        "Universitas Gadjah Mada",
+        "Universitas Indonesia",
+        "Universitas Negeri Malang",
+        "Universitas Airlangga",
+        "Universitas Diponegoro",
+        "Universitas Padjajaran",
+        "Universitas Sebelas Maret",
+        "Universitas Udayana",
+        "Universitas Pendidikan Indonesia"
+    );
+    sort($universities); 
+    $university_list = json_encode($universities);
+    echo "<script>let uni = $university_list;</script>"
 ?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
@@ -12,6 +31,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <title>Admin Page</title>
 </head>
 <body>
@@ -34,8 +56,15 @@
             <input type="text" class="form-control" name="email" id="email" autocomplete="off" required>
         </div>
         <div class="mb-3">
-            <label for="gambar" class="form-label">Gambar</label>
+            <label for="gambar" class="form-label">Universitas</label>
             <input type="text" class="form-control" name="gambar" id="gambar" autocomplete="off" required>
+            <script>
+                $(document).ready(() => {
+                    $('#gambar').autocomplete({
+                        source: uni
+                    });
+                });
+            </script>
         </div>
         <button type="submit" class="btn btn-primary" name="submit">Add Data</button>
     </form>

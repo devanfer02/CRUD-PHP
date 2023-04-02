@@ -42,6 +42,8 @@
 
     function delete($id)
     {
-        
+        global $connect;
+        mysqli_query($connect,"DELETE FROM student WHERE id = $id");
+        return mysqli_affected_rows($connect);
     }
 ?>
