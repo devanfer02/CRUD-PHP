@@ -15,8 +15,8 @@
     <title>Admin Page</title>
 </head>
 <body>
-    <?php include "addons/nav.php"?>
-    <form action="" method="post" style="padding-top: 10px;">
+    <?php include "addons/navbar.php"?>
+    <form action="" method="post" style="padding-top: 10px; padding-left: 14px">
         <div class="mb-3">
             <label for="nama" class="form-label">Nama Lengkap</label>
             <input type="text" class="form-control" name="nama" id="nama" autocomplete="off" required>

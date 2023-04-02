@@ -9,8 +9,8 @@
     <div class="card-body">
         <h5 class="card-title">Hello Everyone!</h5>
         <p class="card-text">You can reach me from these social media! Feel free to add me!</p>
-        <a href="#" class="btn btn-primary">Github</a>
-        <a href="#" class="btn btn-primary">Linkedin</a>
+        <a href="https://github.com/devanfer02" class="btn btn-primary" target="_blank">Github</a>
+        <a href="https://www.linkedin.com/in/dvnnfrr/" class="btn btn-primary" target="_blank">Linkedin</a>
     </div>
     </div>
 </footer>

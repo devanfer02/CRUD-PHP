@@ -13,7 +13,7 @@
     <title>Admin Page</title>
 </head>
 <body>
-    <?php include "addons/nav.php"?>
+    <?php include "addons/navbar.php"?>
     <table class="table table-striped" border="1" cellpadding="10" cellspacing="0">
         <thead>
             <tr>
@@ -34,7 +34,8 @@
             <tr>
                 <td scope="row"><?= $i++?></td>
                 <td>
-                    <a href="">UPDATE</a> | <a href="delete.php?id=<?= $row["id"]?>">DELETE</a>
+                    <a class="btn btn-success btn-sm" href="">UPDATE</a> | 
+                    <a class="btn btn-danger btn-sm" href="delete.php?id=<?= $row["id"]?>">DELETE</a>
                 </td>
                 <td>
                     <img src="img/braw.png" width="50" alt="">
