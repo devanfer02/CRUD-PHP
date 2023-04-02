@@ -2,7 +2,7 @@
     include 'handlers/functions.php';
     if(isset($_POST["submit"]))
     {
-        add($_POST); 
+        $isSuccess = add($_POST); 
     }
 ?>
 <!DOCTYPE html>
@@ -19,26 +19,37 @@
     <form action="" method="post" style="padding-top: 10px;">
         <div class="mb-3">
             <label for="nama" class="form-label">Nama Lengkap</label>
-            <input type="text" class="form-control" name="nama" id="nama" autocomplete="off">
+            <input type="text" class="form-control" name="nama" id="nama" autocomplete="off" required>
         </div>
         <div class="mb-3">
             <label for="nim" class="form-label">NIM</label>
-            <input type="text" class="form-control" name="nim" id="nim" autocomplete="off">
+            <input type="text" class="form-control" name="nim" id="nim" autocomplete="off" required>
         </div>
         <div class="mb-3">
             <label for="prodi" class="form-label">Program Studi</label>
-            <input type="text" class="form-control" name="prodi" id="prodi" autocomplete="off">
+            <input type="text" class="form-control" name="prodi" id="prodi" autocomplete="off" required>
         </div>
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>
-            <input type="text" class="form-control" name="email" id="email" autocomplete="off">
+            <input type="text" class="form-control" name="email" id="email" autocomplete="off" required>
         </div>
         <div class="mb-3">
             <label for="gambar" class="form-label">Gambar</label>
-            <input type="text" class="form-control" name="gambar" id="gambar" autocomplete="off">
+            <input type="text" class="form-control" name="gambar" id="gambar" autocomplete="off" required>
         </div>
         <button type="submit" class="btn btn-primary" name="submit">Add Data</button>
     </form>
+    <?php
+        if(isset($isSuccess) && $isSuccess)
+        {
+            echo "<h3>Success!</h3><br>";
+            echo "<h4>Data has been successfully added to database!</h4><br>";
+        } else if (isset($isSuccess))
+        {
+            echo "<h3>Failed!</h3><br>";
+            echo "<h4>Data failed to add to database!</h4><br>";
+        }
+    ?>
     <?php include "addons/footer.php"?>
 </body>
 </html>

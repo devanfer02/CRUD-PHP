@@ -19,25 +19,29 @@
     function add($data)
     {
         global $connect;
-        $nim = $data["nim"];
-        $nama = $data["nama"];
-        $prodi = $data["prodi"];
-        $email = $data["email"];
-        $gambar = $data["gambar"]; 
+        
+        $nim = htmlspecialchars($data["nim"]);;
+        $nama = htmlspecialchars($data["nama"]);
+        $prodi = htmlspecialchars($data["prodi"]);
+        $email = htmlspecialchars($data["email"]);
+        $gambar = htmlspecialchars($data["gambar"]); 
+
+        //check nim valid
+        if(strlen($nim) != 15)
+        {
+            return false;
+        }
 
         $query = "INSERT INTO student VALUES('','$nama','$nim','$prodi','$email','$gambar')";
         mysqli_query($connect,$query);
 
         // check if data successfully added
         $isSuccess = mysqli_affected_rows($connect) > 0;
-        if($isSuccess) 
-        {
-            printf("Success!\n");
-            printf("Status : 200 OK\n");
-        } else 
-        {
-            printf("Failed!\n");
-            printf("Error message : \n",mysqli_error($connect));
-        }
+        return $isSuccess;
+    }
+
+    function delete($id)
+    {
+        
     }
 ?>

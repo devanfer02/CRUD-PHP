@@ -34,7 +34,7 @@
             <tr>
                 <td scope="row"><?= $i++?></td>
                 <td>
-                    <a href="">UPDATE</a> | <a href="">DELETE</a>
+                    <a href="">UPDATE</a> | <a href="delete.php?id=<?= $row["id"]?>">DELETE</a>
                 </td>
                 <td>
                     <img src="img/braw.png" width="50" alt="">
