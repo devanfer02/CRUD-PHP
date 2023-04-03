@@ -61,4 +61,30 @@
         mysqli_query($connect,"DELETE FROM student WHERE id = $id");
         return mysqli_affected_rows($connect);
     }
+
+    function update($id)
+    {
+
+    }
+
+    function getConnection()
+    {
+        global $connect;
+        return $connect;
+    }
+
+    function getData($id)
+    {
+        global $connect;
+        $query = "SELECT * FROM student WHERE id=$id";
+        $connect = getConnection();
+        $result = mysqli_query($connect,$query); 
+
+        //check if data exist or not
+        if(mysqli_num_rows($result) > 0)
+        {
+            return mysqli_fetch_assoc($result);    
+        } 
+        return NULL;
+    }
 ?>

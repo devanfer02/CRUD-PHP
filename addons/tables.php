@@ -18,7 +18,7 @@
             <tr>
                 <td scope="row"><?= $i++?></td>
                 <td>
-                    <a class="btn btn-success btn-sm" href="">UPDATE</a> 
+                    <a class="btn btn-success btn-sm" href="update.php?id=<?= $row["id"]?>">UPDATE</a> 
                     <a class="btn btn-danger btn-sm" href="delete.php?id=<?= $row["id"]?>">DELETE</a>
                 </td>
                 <td>
