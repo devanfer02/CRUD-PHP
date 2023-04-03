@@ -1,9 +1,5 @@
 <?php
     include 'handlers/functions.php';
-    if(isset($_POST["submit"]))
-    {
-        $isSuccess = add($_POST); 
-    }
     $universities = array(
         "Universitas Bina Nusantara",
         "Politeknik Negeri Surabaya",
@@ -22,7 +18,11 @@
     );
     sort($universities); 
     $university_list = json_encode($universities);
-    echo "<script>let uni = $university_list;</script>"
+    echo "<script>let uni = $university_list;</script>";
+    if(isset($_POST["submit"]))
+    {
+        $isSuccess = add($_POST); 
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
@@ -58,6 +58,7 @@
         <div class="mb-3">
             <label for="gambar" class="form-label">Universitas</label>
             <input type="text" class="form-control" name="gambar" id="gambar" autocomplete="off" required>
+            <!-- note, pk nim kampus lain tidak bisa ke add -->
             <script>
                 $(document).ready(() => {
                     $('#gambar').autocomplete({
