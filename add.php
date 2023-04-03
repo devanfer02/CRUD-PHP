@@ -1,22 +1,6 @@
 <?php
     include 'handlers/functions.php';
-    $universities = array(
-        "Universitas Bina Nusantara",
-        "Politeknik Negeri Surabaya",
-        "Politeknik Negeri Malang",
-        "Univeristas Telkom",
-        "Universitas Brawijaya",
-        "Universitas Gadjah Mada",
-        "Universitas Indonesia",
-        "Universitas Negeri Malang",
-        "Universitas Airlangga",
-        "Universitas Diponegoro",
-        "Universitas Padjajaran",
-        "Universitas Sebelas Maret",
-        "Universitas Udayana",
-        "Universitas Pendidikan Indonesia"
-    );
-    sort($universities); 
+    include 'data/uni_options.php';
     $university_list = json_encode($universities);
     echo "<script>let uni = $university_list;</script>";
     if(isset($_POST["submit"]))
@@ -58,7 +42,6 @@
         <div class="mb-3">
             <label for="gambar" class="form-label">Universitas</label>
             <input type="text" class="form-control" name="gambar" id="gambar" autocomplete="off" required>
-            <!-- note, pk nim kampus lain tidak bisa ke add -->
             <script>
                 $(document).ready(() => {
                     $('#gambar').autocomplete({
@@ -70,15 +53,12 @@
         <button type="submit" class="btn btn-primary" name="submit">Add Data</button>
     </form>
     <?php
-        if(isset($isSuccess) && $isSuccess)
+        if(isset($isSuccess))
         {
-            echo "<h3>Success!</h3><br>";
-            echo "<h4>Data has been successfully added to database!</h4><br>";
-        } else if (isset($isSuccess))
-        {
-            echo "<h3>Failed!</h3><br>";
-            echo "<h4>Data failed to add to database!</h4><br>";
-        }
+            
+            $isSuccess = "<div style='padding-left: 20px;'>$isSuccess</div>";
+            echo $isSuccess;
+        } 
     ?>
     <?php include "addons/footer.php"?>
 </body>

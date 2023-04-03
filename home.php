@@ -26,8 +26,8 @@
     <div class="container">
         <h1 class="text-center mt-5">About Me</h1>
         <p class="text-center">My name is Devan Ferrel. I'm an undergraduate University Brawijaya Student</p>
-        <p class="text-center">I'm majoring in Information Technology Education</p>
-        <p class="text-center">I'm interested in backend and competitive programming</p>
+        <p class="text-center">Currently i'm majoring in Information Technology Education</p>
+        <p class="text-center">I'm also interested in backend and competitive programming</p>
         <p class="text-center">Feel free to connect with me with the contact below!</p>
     </div>
     <?php include "addons/footer.php"?>
