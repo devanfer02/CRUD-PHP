@@ -15,7 +15,9 @@
         "Universitas Udayana",
         "Universitas Pendidikan Indonesia",
         "Institut Teknologi Sepuluh November",
-        "Institut Teknologi Bandung"
+        "Institut Teknologi Bandung",
+        "Institut Pertanian Bogor",
+        "Universitas Negeri Jakarta"
     );
     sort($universities); 
 ?>

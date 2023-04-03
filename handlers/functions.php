@@ -37,7 +37,7 @@
             "<h4>Please contact customer support</h4><br>";
             "<h4>To verify your university</h4><br>";
         }
-        $gambar = $gambar.".png";
+        $gambar = "".$gambar.".png";
 
         $query = "INSERT INTO student VALUES('','$nama','$nim','$prodi','$email','$gambar')";
         mysqli_query($connect,$query);

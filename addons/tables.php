@@ -22,7 +22,7 @@
                     <a class="btn btn-danger btn-sm" href="delete.php?id=<?= $row["id"]?>">DELETE</a>
                 </td>
                 <td>
-                    <img src="img/<?= $row["gambar"]?>" width="50" height="50" alt="">
+                    <img src="img/uni_logos/<?= $row["gambar"]?>" width="50" height="50" alt="">
                 </td>
                 <td><?= $row["nim"]?></td>
                 <td><?= $row["nama"]?></td>
