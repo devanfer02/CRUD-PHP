@@ -2,7 +2,8 @@
     include 'handlers/functions.php';
     include 'data/uni_options.php';
     $id = $_GET["id"];
-    $data = getData($id);
+    $query = "SELECT * FROM student WHERE id=$id";
+    $data = getData($query);
 
     $university_list = json_encode($universities);
     echo "<script>let uni = $university_list;</script>";
@@ -54,7 +55,7 @@
         <div class="mb-3">
             <label for="gambar" class="form-label">Universitas</label>
             <input type="text" class="form-control" name="gambar" id="gambar" autocomplete="off" required
-            value="<?=substr($data["gambar"],0,strrpos($data["gambar"],".png"))?>">
+            value="<?=filterExtension($data["gambar"],".png")?>">
             <script>
                 $(document).ready(() => {
                     $('#gambar').autocomplete({
@@ -68,13 +69,7 @@
     <?php   
         } else 
         {
-    ?>
-    <div class="container" style="padding-bottom: 300px; padding-top: 100px;">
-        <img src="icons/icons8-meh-blank-96.png" alt="blank" class="mx-auto d-block">
-        <h1 class="text-center mt-5">The Data you were looking for doesnt exist</h1>
-        <h3 class="text-center">Please contact support if there's something wrong</h3>
-    </div>
-    <?php
+            include 'addons/not_exist.php';
         }
     ?>
     <?php

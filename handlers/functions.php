@@ -106,10 +106,9 @@
         "<h4>Data failed to add to database!</h4><br>";
     }
 
-    function getData($id)
+    function getData($query)
     {
         global $connect;
-        $query = "SELECT * FROM student WHERE id=$id";
         $result = mysqli_query($connect,$query); 
 
         //check if data exist or not
@@ -118,5 +117,21 @@
             return mysqli_fetch_assoc($result);    
         } 
         return NULL;
+    }
+
+    function search($keyword)
+    {
+        $query = "SELECT * FROM student 
+        WHERE nama LIKE '%$keyword%' OR
+        nim LIKE '%$keyword%' OR
+        email LIKE '%$keyword%' OR
+        prodi LIKE '%$keyword%' OR
+        gambar LIKE '%$keyword%'";
+        return query($query);
+    }
+
+    function filterExtension($string, $extension)
+    {
+        return substr($string,0,strrpos($string,$extension));
     }
 ?>
