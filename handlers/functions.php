@@ -62,22 +62,54 @@
         return mysqli_affected_rows($connect);
     }
 
-    function update($id)
-    {
-
-    }
-
-    function getConnection()
+    function update($id, $data)
     {
         global $connect;
-        return $connect;
+        global $universities;
+        
+        $nim = htmlspecialchars($data["nim"]);;
+        $nama = htmlspecialchars($data["nama"]);
+        $prodi = htmlspecialchars($data["prodi"]);
+        $email = htmlspecialchars($data["email"]);
+
+        //checking if university exist
+        $gambar = htmlspecialchars($data["gambar"]); 
+        if(!in_array($gambar,$universities))
+        {
+            return 
+            "<h3>Failed!</h3><br>".
+            "<h4>University doesn't exist!</h4><br>".
+            "<h4>Please contact customer support</h4><br>";
+            "<h4>To verify your university</h4><br>";
+        }
+        $gambar = "".$gambar.".png";
+
+        $query = "UPDATE student
+        SET nim = '$nim', 
+        nama = '$nama', 
+        prodi = '$prodi',
+        email = '$email',
+        gambar = '$gambar'
+        WHERE id = $id";
+
+        mysqli_query($connect,$query);
+
+        $isSuccess = mysqli_affected_rows($connect) > 0;
+        if($isSuccess)
+        {
+            return 
+            "<h3>Success!</h3><br>".
+            "<h4>Data has been successfully added to database!</h4><br>";
+        }
+        return 
+        "<h3>Failed!</h3><br>".
+        "<h4>Data failed to add to database!</h4><br>";
     }
 
     function getData($id)
     {
         global $connect;
         $query = "SELECT * FROM student WHERE id=$id";
-        $connect = getConnection();
         $result = mysqli_query($connect,$query); 
 
         //check if data exist or not

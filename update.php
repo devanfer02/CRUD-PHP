@@ -8,7 +8,7 @@
     echo "<script>let uni = $university_list;</script>";
     if(isset($_POST["submit"]))
     {
-        $isSuccess = update($_POST); 
+        $isSuccess = update($id ,$_POST); 
     }
 ?>
 <!DOCTYPE html>
