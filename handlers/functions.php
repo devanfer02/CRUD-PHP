@@ -165,6 +165,38 @@
         return mysqli_affected_rows($connect);
     }
 
+    function login($data)
+    {
+        global $connect;
+        $username = $_POST["username"];
+        $password = $_POST["password"];
+
+        $query = "SELECT * FROM users WHERE username='$username'";
+        $result = mysqli_query($connect,$query);
+
+        //Check if it exist
+        if(mysqli_num_rows($result) !== 1)
+        {
+            echo "
+            <script>
+                alert('Login failed! User does not exist yet');
+            </script>";
+            return;    
+        }
+
+        $row = mysqli_fetch_assoc($result);
+        if (!password_verify($password,$row["password"]))
+        {
+            echo "
+            <script>
+                alert('Login failed! Password does not match');
+            </script>";
+            return;
+        }
+
+        header("Location: index.php");
+    }
+
     function filterExtension($string, $extension)
     {
         return substr($string,0,strrpos($string,$extension));

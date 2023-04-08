@@ -1,6 +1,7 @@
 <?php
     include 'handlers/functions.php';
     include 'data/uni_options.php';
+    $title = 'Admin Page';
     $id = $_GET["id"];
     $query = "SELECT * FROM student WHERE id=$id";
     $data = getData($query);

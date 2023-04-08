@@ -1,5 +1,6 @@
 <?php
     include 'handlers/functions.php';
+    $title = 'Home Page';
     if(isset($_POST["submit"]))
     {
         $isSuccess = add($_POST); 

@@ -1,5 +1,6 @@
 <?php
     include "handlers/functions.php";
+    $title = 'Register Page';
     if(isset($_POST["register"]))
     {
         $affected = register($_POST);

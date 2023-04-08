@@ -1,5 +1,6 @@
 <?php
     include 'handlers/functions.php';
+    $title = 'Admin Page';
     $student = query("SELECT * FROM student");
     $size = count($student);
     if(isset($_POST["search"]))

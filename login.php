@@ -1,8 +1,9 @@
 <?php
     include "handlers/functions.php";
+    $title = 'Login Page';
     if(isset($_POST["login"]))
     {
-
+        login($_POST);
     }
 ?>
 <!DOCTYPE html>
@@ -24,7 +25,7 @@
             <label for="password" class="form-label">Password</label>
             <input type="password" class="form-control" name="password" id="password" autocomplete="off" required>
         </div>
-        <button type="submit" class="btn btn-primary" name="register">Register</button>
+        <button type="submit" class="btn btn-primary" name="login">Login</button>
     </form>
     <div style="padding-left:15px; padding-top:7px;">
         <hr>
