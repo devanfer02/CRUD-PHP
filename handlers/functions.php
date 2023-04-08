@@ -130,6 +130,41 @@
         return query($query);
     }
 
+    function register($data)
+    {
+        global $connect;
+
+        $username = stripslashes($data["username"]);
+        $password = mysqli_real_escape_string($connect, $data["password"]);
+        $confirm = mysqli_real_escape_string($connect, $data["confirm"]);
+        $email = $data["email"];
+        
+        if(preg_match('/[^a-z0-9]/',$username))
+        {
+            return -404; 
+        }
+
+        if($password !== $confirm)
+        {
+            return -405;
+        }
+
+        // username exist already?
+        $query = "SELECT * FROM users WHERE username='$username'";
+        $result = mysqli_query($connect,$query);
+
+        if(mysqli_fetch_assoc($result))
+        {
+            return -406;
+        }
+
+        $password = password_hash($password,PASSWORD_DEFAULT);
+        $query = "INSERT INTO users VALUES('','$username','$password','$email')";
+        mysqli_query($connect,$query);
+
+        return mysqli_affected_rows($connect);
+    }
+
     function filterExtension($string, $extension)
     {
         return substr($string,0,strrpos($string,$extension));
