@@ -1,7 +1,9 @@
 <?php
     include 'handlers/functions.php';
     include 'data/uni_options.php';
-    startSession();
+    session_start();
+    checkCookie();
+    checkSession();
     $title = 'Admin Page';
     $id = $_GET["id"];
     $query = "SELECT * FROM student WHERE id=$id";

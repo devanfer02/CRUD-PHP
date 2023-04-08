@@ -189,17 +189,29 @@
 
         $_SESSION["login"] = true;
         $_SESSION["admin"] = $username;
+
+        if(isset($data['remember']))
+        {
+            setcookie('login','true',time()+120);
+        }
         return true;
         
     }
 
-    function startSession()
+    function checkSession()
     {
-        session_start();
         if(!isset($_SESSION["login"]))
         {
             header("Location: login.php");
             exit;
+        }
+    }
+
+    function checkCookie()
+    {
+        if(isset($_COOKIE['login']) && $_COOKIE['login'] == 'true')
+        {
+            $_SESSION["login"] = true;
         }
     }
 

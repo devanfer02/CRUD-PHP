@@ -1,6 +1,8 @@
 <?php
     include "handlers/functions.php";
-    startSession();
+    session_start();
+    checkCookie();
+    checkSession();
     $title = "Log Page";
 ?>
 <!DOCTYPE html>

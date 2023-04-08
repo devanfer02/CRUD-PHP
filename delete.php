@@ -1,6 +1,8 @@
 <?php
     include "./handlers/functions.php";
-    startSession();
+    session_start();
+    checkCookie();
+    checkSession();
     $id = $_GET["id"];
     if(delete($id) > 0)
     {

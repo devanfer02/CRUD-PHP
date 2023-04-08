@@ -1,6 +1,8 @@
 <?php
     include 'handlers/functions.php';
-    startSession();
+    session_start();
+    checkCookie();
+    checkSession();
     $title = 'Admin Page';
     $student = query("SELECT * FROM student");
     $size = count($student);
