@@ -26,6 +26,12 @@
             <label for="password" class="form-label">Password</label>
             <input type="password" class="form-control" name="password" id="password" autocomplete="off" required>
         </div>
+        <div class="form-check" style="padding-bottom:8px;">
+            <input type="checkbox" class="form-check-input" value="" id="remember">
+            <label class="form-check-label" for="remember">
+                Remember Me
+            </label>
+        </div>
         <button type="submit" class="btn btn-primary" name="login">Login</button>
     </form>
     <div>
