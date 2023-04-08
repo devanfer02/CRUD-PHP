@@ -14,8 +14,8 @@ To play with this crud webapp please followw the following instructions
 
 ### Making database in phpmyadmin
 - After you turn on the apache and mysql, go to ```localhost/phpmyadmin/```
-- On the left sidebar, click new and make database
-- Make a table with given category
+- On the left sidebar, click new and make database with name ```basics```
+- Make a table with name ```student``` with given category
 ```
 +----------+---------+---------+-----+
 |  nama    |  jenis  | panjang | A_I |

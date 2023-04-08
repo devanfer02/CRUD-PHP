@@ -1,5 +1,6 @@
 <?php
     include './data/uni_options.php';
+
     //Connect to database
     $connect = mysqli_connect("localhost","root","","basics");
 
@@ -177,17 +178,34 @@
         //Check if it exist
         if(mysqli_num_rows($result) !== 1)
         {
-            return true;    
+            return false;    
         }
 
         $row = mysqli_fetch_assoc($result);
         if (!password_verify($password,$row["password"]))
         {
-            return true;
+            return false;
         }
 
-        return false;
+        $_SESSION["login"] = true;
+        $_SESSION["admin"] = $username;
+        return true;
         
+    }
+
+    function startSession()
+    {
+        session_start();
+        if(!isset($_SESSION["login"]))
+        {
+            header("Location: login.php");
+            exit;
+        }
+    }
+
+    function addLog()
+    {
+        //Buat nyimpen history changes oleh admin
     }
 
     function filterExtension($string, $extension)

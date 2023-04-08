@@ -1,5 +1,6 @@
 <?php
     include 'handlers/functions.php';
+    startSession();
     $title = 'Home Page';
     if(isset($_POST["submit"]))
     {

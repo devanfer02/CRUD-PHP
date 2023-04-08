@@ -1,6 +1,7 @@
 <?php
     include 'handlers/functions.php';
     include 'data/uni_options.php';
+    startSession();
     $title = 'Admin Page';
     $university_list = json_encode($universities);
     echo "<script>let uni = $university_list;</script>";

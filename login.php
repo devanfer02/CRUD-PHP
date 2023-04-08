@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include "handlers/functions.php";
     $title = 'Login Page';
     if(isset($_POST["login"]))
@@ -29,11 +30,11 @@
     </form>
     <div>
         <?php if(isset($status) && $status ): ?>
+            <?php header("Location: index.php"); exit;?>
+        <?php elseif(isset($status)) : ?>
             <p style="color:red; padding-left:15px; padding-top:7px;">
                 Username or Password doesn't match
             </p>
-        <?php elseif(isset($status)) : ?>
-            <?php header("Location: index.php"); exit;?>
         <?php endif;?>
     </div>
     <div style="padding-left:15px; padding-top:7px;">
