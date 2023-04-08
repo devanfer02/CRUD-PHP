@@ -3,7 +3,7 @@
     $title = 'Login Page';
     if(isset($_POST["login"]))
     {
-        login($_POST);
+        $status = login($_POST);
     }
 ?>
 <!DOCTYPE html>
@@ -27,6 +27,15 @@
         </div>
         <button type="submit" class="btn btn-primary" name="login">Login</button>
     </form>
+    <div>
+        <?php if(isset($status) && $status ): ?>
+            <p style="color:red; padding-left:15px; padding-top:7px;">
+                Username or Password doesn't match
+            </p>
+        <?php elseif(isset($status)) : ?>
+            <?php header("Location: index.php"); exit;?>
+        <?php endif;?>
+    </div>
     <div style="padding-left:15px; padding-top:7px;">
         <hr>
         <h4>

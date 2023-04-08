@@ -168,8 +168,8 @@
     function login($data)
     {
         global $connect;
-        $username = $_POST["username"];
-        $password = $_POST["password"];
+        $username = $data["username"];
+        $password = $data["password"];
 
         $query = "SELECT * FROM users WHERE username='$username'";
         $result = mysqli_query($connect,$query);
@@ -177,24 +177,17 @@
         //Check if it exist
         if(mysqli_num_rows($result) !== 1)
         {
-            echo "
-            <script>
-                alert('Login failed! User does not exist yet');
-            </script>";
-            return;    
+            return true;    
         }
 
         $row = mysqli_fetch_assoc($result);
         if (!password_verify($password,$row["password"]))
         {
-            echo "
-            <script>
-                alert('Login failed! Password does not match');
-            </script>";
-            return;
+            return true;
         }
 
-        header("Location: index.php");
+        return false;
+        
     }
 
     function filterExtension($string, $extension)
