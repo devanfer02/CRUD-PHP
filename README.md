@@ -28,6 +28,17 @@ To play with this crud webapp please followw the following instructions
 |  gambar  | varchar |   100   |     |
 +----------+---------+---------+-----+
 ```
+- Make a table with name ```users``` with given category
+```
++----------+---------+---------+-----+
+|  nama    |  jenis  | panjang | A_I |
++----------+---------+---------+-----+
+|  id      |   int   |   11    |  On |
+|  username| varchar |   50    |     |
+|  password| varchar |   300   |     |
+|  email   | varchar |   100   |     |
++----------+---------+---------+-----+
+```
 
 ### Clone this project
 - Clone this project using whatever you like 
