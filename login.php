@@ -1,5 +1,7 @@
 <?php
     session_start();
+    // checkCookie();
+    // checkSession();
     include "handlers/functions.php";
     $title = 'Login Page';
     if(isset($_POST["login"]))

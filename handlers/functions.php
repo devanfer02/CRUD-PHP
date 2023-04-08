@@ -135,10 +135,11 @@
     {
         global $connect;
 
+        $name = stripslashes($data["name"]);
         $username = stripslashes($data["username"]);
         $password = mysqli_real_escape_string($connect, $data["password"]);
         $confirm = mysqli_real_escape_string($connect, $data["confirm"]);
-        $email = $data["email"];
+        $email = stripslashes($data["email"]);
         
         if(preg_match('/[^a-z0-9]/',$username))
         {
@@ -160,7 +161,7 @@
         }
 
         $password = password_hash($password,PASSWORD_DEFAULT);
-        $query = "INSERT INTO users VALUES('','$username','$password','$email')";
+        $query = "INSERT INTO users VALUES('','$username','$password','$email','$name')";
         mysqli_query($connect,$query);
 
         return mysqli_affected_rows($connect);
@@ -169,6 +170,7 @@
     function login($data)
     {
         global $connect;
+        
         $username = $data["username"];
         $password = $data["password"];
 
@@ -186,13 +188,14 @@
         {
             return false;
         }
-
+        
         $_SESSION["login"] = true;
-        $_SESSION["admin"] = $username;
+        $_SESSION["admin"] = $row["name"];
 
         if(isset($data['remember']))
         {
-            setcookie('login','true',time()+120);
+            setcookie('sudorootuserid',$row['id'],time()+120);
+            setcookie('sudorootuserkey',hash('sha512',$row['username']),time()+120);
         }
         return true;
         
@@ -209,9 +212,20 @@
 
     function checkCookie()
     {
-        if(isset($_COOKIE['login']) && $_COOKIE['login'] == 'true')
+        global $connect;
+        if(isset($_COOKIE['sudorootuserid']) && isset($_COOKIE['sudorootuserkey']))
         {
-            $_SESSION["login"] = true;
+            $rootid = $_COOKIE['sudorootuserid'];
+            $rootkey = $_COOKIE['sudorootuserkey'];
+
+            $query = "SELECT username FROM users WHERE id=$rootid";
+            $result = mysqli_query($connect,$query);
+            $row = mysqli_fetch_assoc($result);
+
+            if($rootkey === hash('sha512',$row['username']))
+            {
+                $_SESSION['login'] = true;
+            }
         }
     }
 
