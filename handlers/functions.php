@@ -122,12 +122,26 @@
 
     function search($keyword)
     {
+        
         $query = "SELECT * FROM student 
         WHERE nama LIKE '%$keyword%' OR
         nim LIKE '%$keyword%' OR
         email LIKE '%$keyword%' OR
         prodi LIKE '%$keyword%' OR
         gambar LIKE '%$keyword%'";
+
+        if(func_num_args() == 3)
+        {
+            $args = func_get_args();
+            $index = $args[1];
+            $limit = $args[2];
+            $query = "SELECT * FROM student 
+            WHERE nama LIKE '%$keyword%' OR
+            nim LIKE '%$keyword%' OR
+            email LIKE '%$keyword%' OR
+            prodi LIKE '%$keyword%' OR
+            gambar LIKE '%$keyword%' LIMIT $index,$limit";
+        }
         return query($query);
     }
 
@@ -227,6 +241,23 @@
                 $_SESSION['login'] = true;
             }
         }
+    }
+
+    function getPagination($data)
+    {
+        $pagination = array();
+        $dataPerPage = 5;
+        $dataTable = count($data);
+        $totalPages = (int)ceil($dataTable / $dataPerPage);
+        $activePage = isset($_GET["page"]) ? (int)$_GET["page"] : 1;
+        $index = ($activePage - 1) * $dataPerPage;
+
+        $pagination["index"] = $index;
+        $pagination["limit"] = $dataPerPage;
+        $pagination["total"] = $totalPages;
+        $pagination["active"] = $activePage;
+
+        return $pagination;
     }
 
     function addLog()
