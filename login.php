@@ -53,6 +53,5 @@ if(isset($_POST["login"]))
         <a href="register.php" class="btn btn-primary" style="padding-bottom: 8px;">Register</a>
         <hr>
     </div>
-    <?php include 'addons/footer.php';?>
 </body>
 </html>
