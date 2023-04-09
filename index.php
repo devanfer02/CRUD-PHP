@@ -52,7 +52,7 @@ if(isset($_SESSION["index"]))
         }
     ?>
     <?php include "addons/footer.php"?>
-    <script src="javascript/script.js"></script>
+    <script src="javascript/index.js"></script>
 </body>
 
 </html>

@@ -55,5 +55,6 @@ if(isset($_SESSION["log"]))
         }
     ?>
     <?php include 'addons/footer.php';?>
+    <script src="javascript/log.js"></script>
 </body>
 </html>
