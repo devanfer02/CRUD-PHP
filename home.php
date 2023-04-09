@@ -1,13 +1,13 @@
 <?php
-    include 'handlers/functions.php';
-    session_start();
-    checkCookie();
-    checkSession();
-    $title = 'Home Page';
-    if(isset($_POST["submit"]))
-    {
-        $isSuccess = add($_POST); 
-    }
+include 'handlers/functions.php';
+session_start();
+checkCookie();
+checkSession();
+$title = 'Home Page';
+if(isset($_POST["submit"]))
+{
+    $isSuccess = add($_POST); 
+}
 ?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">

@@ -1,37 +1,37 @@
 <?php
-    include 'handlers/functions.php';
-    session_start();
-    checkCookie();
-    checkSession();
+include 'handlers/functions.php';
+session_start();
+checkCookie();
+checkSession();
 
-    $pagination = getPagination(query("SELECT * FROM student"));
+$pagination = getPagination(query("SELECT * FROM student"));
+$index = $pagination["index"];
+$dataPerPage = $pagination["limit"];
+$totalPages = $pagination["total"];
+$activePage = $pagination["active"];
+
+$title = 'Admin Page';
+$student = query("SELECT * FROM student LIMIT $index, $dataPerPage");
+$size = count($student);
+if(isset($_POST["search"]))
+{
+    $_SESSION["search"] = $_POST["keyword"];
+
+    $pagination = getPagination(search($_POST["keyword"]));
     $index = $pagination["index"];
-    $dataPerPage = $pagination["limit"];
-    $totalPages = $pagination["total"];
-    $activePage = $pagination["active"];
+    $dataPerPage = $pagination["limit"]; 
+    $totalPages = $pagination["total"];   
+    $student = search($_POST["keyword"],$index,$dataPerPage);
+}
 
-    $title = 'Admin Page';
-    $student = query("SELECT * FROM student LIMIT $index, $dataPerPage");
-    $size = count($student);
-    if(isset($_POST["search"]))
-    {
-        $_SESSION["search"] = $_POST["keyword"];
-
-        $pagination = getPagination(search($_POST["keyword"]));
-        $index = $pagination["index"];
-        $dataPerPage = $pagination["limit"]; 
-        $totalPages = $pagination["total"];   
-        $student = search($_POST["keyword"],$index,$dataPerPage);
-    }
-
-    if(isset($_SESSION["search"]))
-    {
-        $pagination = getPagination(search($_SESSION["search"]));
-        $index = $pagination["index"];
-        $dataPerPage = $pagination["limit"]; 
-        $totalPages = $pagination["total"];   
-        $student = search($_SESSION["search"],$index,$dataPerPage);
-    }
+if(isset($_SESSION["search"]))
+{
+    $pagination = getPagination(search($_SESSION["search"]));
+    $index = $pagination["index"];
+    $dataPerPage = $pagination["limit"]; 
+    $totalPages = $pagination["total"];   
+    $student = search($_SESSION["search"],$index,$dataPerPage);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">

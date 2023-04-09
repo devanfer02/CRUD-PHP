@@ -1,13 +1,13 @@
 <?php
-    session_start();
-    // checkCookie();
-    // checkSession();
-    include "handlers/functions.php";
-    $title = 'Login Page';
-    if(isset($_POST["login"]))
-    {
-        $status = login($_POST);
-    }
+session_start();
+checkCookie();
+checkSession();
+include "handlers/functions.php";
+$title = 'Login Page';
+if(isset($_POST["login"]))
+{
+    $status = login($_POST);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">

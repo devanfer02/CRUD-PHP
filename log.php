@@ -1,12 +1,12 @@
 <?php
-    include "handlers/functions.php";
-    session_start();
-    checkCookie();
-    checkSession();
-    $title = "Log Page";
-    //TODO : Nambah log activity untuk ngecek
-    //admin sudah melakukan perubahan apa saja
-    //ke webnya, tambahkan fitur pagination jg disini
+include "handlers/functions.php";
+session_start();
+checkCookie();
+checkSession();
+$title = "Log Page";
+//TODO : Nambah log activity untuk ngecek
+//admin sudah melakukan perubahan apa saja
+//ke webnya, tambahkan fitur pagination jg disini
 ?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">

@@ -1,38 +1,38 @@
 <?php
-    include "handlers/functions.php";
-    $title = 'Register Page';
-    if(isset($_POST["register"]))
+include "handlers/functions.php";
+$title = 'Register Page';
+if(isset($_POST["register"]))
+{
+    $affected = register($_POST);
+    if($affected > 0)
     {
-        $affected = register($_POST);
-        if($affected > 0)
-        {
-            echo "
-            <script>
-                alert('User has been added! You can relogin to login');
-            </script>";
-        } else if($affected === -404)
-        {
-            echo "
-            <script>
-                alert('Register failed! Username can only consist of lowercase letter and numbers');
-            </script>";
-        } else if($affected === -405)
-        {
-            echo "
-            <script>
-                alert('Register failed! Password confirmation does not match the password');
-            </script>";
-        } else if($affected === -406)
-        {
-            echo "
-            <script>
-                alert('Register failed! Username exist already');
-            </script>";
-        } else 
-        {
-            echo mysqli_error($connect);
-        }
+        echo "
+        <script>
+            alert('User has been added! You can relogin to login');
+        </script>";
+    } else if($affected === -404)
+    {
+        echo "
+        <script>
+            alert('Register failed! Username can only consist of lowercase letter and numbers');
+        </script>";
+    } else if($affected === -405)
+    {
+        echo "
+        <script>
+            alert('Register failed! Password confirmation does not match the password');
+        </script>";
+    } else if($affected === -406)
+    {
+        echo "
+        <script>
+            alert('Register failed! Username exist already');
+        </script>";
+    } else 
+    {
+        echo mysqli_error($connect);
     }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">

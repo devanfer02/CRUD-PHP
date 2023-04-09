@@ -1,16 +1,16 @@
 <?php
-    include 'handlers/functions.php';
-    include 'data/uni_options.php';
-    session_start();
-    checkCookie();
-    checkSession();
-    $title = 'Admin Page';
-    $university_list = json_encode($universities);
-    echo "<script>let uni = $university_list;</script>";
-    if(isset($_POST["submit"]))
-    {
-        $isSuccess = add($_POST); 
-    }
+include 'handlers/functions.php';
+include 'data/uni_options.php';
+session_start();
+checkCookie();
+checkSession();
+$title = 'Admin Page';
+$university_list = json_encode($universities);
+echo "<script>let uni = $university_list;</script>";
+if(isset($_POST["submit"]))
+{
+    $isSuccess = add($_POST); 
+}
 ?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
@@ -49,8 +49,7 @@
     </form>
     <?php
         if(isset($isSuccess))
-        {
-            
+        {   
             $isSuccess = "<div style='padding-left: 20px;'>$isSuccess</div>";
             echo $isSuccess;
         } 

@@ -1,20 +1,20 @@
 <?php
-    include 'handlers/functions.php';
-    include 'data/uni_options.php';
-    session_start();
-    checkCookie();
-    checkSession();
-    $title = 'Admin Page';
-    $id = $_GET["id"];
-    $query = "SELECT * FROM student WHERE id=$id";
-    $data = getData($query);
+include 'handlers/functions.php';
+include 'data/uni_options.php';
+session_start();
+checkCookie();
+checkSession();
+$title = 'Admin Page';
+$id = $_GET["id"];
+$query = "SELECT * FROM student WHERE id=$id";
+$data = getData($query);
 
-    $university_list = json_encode($universities);
-    echo "<script>let uni = $university_list;</script>";
-    if(isset($_POST["submit"]))
-    {
-        $isSuccess = update($id ,$_POST); 
-    }
+$university_list = json_encode($universities);
+echo "<script>let uni = $university_list;</script>";
+if(isset($_POST["submit"]))
+{
+    $isSuccess = update($id ,$_POST); 
+}
 ?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
