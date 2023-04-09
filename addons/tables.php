@@ -1,7 +1,8 @@
 <div class="">
-    <form class="d-flex" role="search" method="get" action="index.php">
-        <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" name="keyword" autofocus autocomplete="off">
-        <button class="btn btn-outline-success" type="submit" name="search">Search</button>
+    <form class="d-flex form-inline" role="search" method="post" action="index.php" style="display:inline-block;">
+        <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" name="keyword" autofocus autocomplete="off">    
+        <input type="hidden" name="search" value="true">    
+        <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
 </div>
 <table class="table table-striped" border="1" cellpadding="10" cellspacing="0">

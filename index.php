@@ -15,11 +15,22 @@
     $size = count($student);
     if(isset($_POST["search"]))
     {
+        $_SESSION["search"] = $_POST["keyword"];
+
         $pagination = getPagination(search($_POST["keyword"]));
         $index = $pagination["index"];
         $dataPerPage = $pagination["limit"]; 
         $totalPages = $pagination["total"];   
         $student = search($_POST["keyword"],$index,$dataPerPage);
+    }
+
+    if(isset($_SESSION["search"]))
+    {
+        $pagination = getPagination(search($_SESSION["search"]));
+        $index = $pagination["index"];
+        $dataPerPage = $pagination["limit"]; 
+        $totalPages = $pagination["total"];   
+        $student = search($_SESSION["search"],$index,$dataPerPage);
     }
 ?>
 <!DOCTYPE html>
