@@ -6,7 +6,7 @@
     $title = "Log Page";
     //TODO : Nambah log activity untuk ngecek
     //admin sudah melakukan perubahan apa saja
-    //ke webnya
+    //ke webnya, tambahkan fitur pagination jg disini
 ?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">

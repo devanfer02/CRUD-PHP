@@ -3,8 +3,22 @@
     session_start();
     checkCookie();
     checkSession();
+
+    $dataPerPage = 10;
+    $query = "SELECT * FROM student";
+    $dataTable = count(query($query));
+    $totalPages = (int)ceil($dataTable / $dataPerPage);
+    if(isset($_GET["page"]))
+    {
+        $activePage = $_GET["page"];        
+    } else 
+    {
+        $activePage = 1;
+    }
+    $index = ($activePage - 1) * $dataPerPage; 
+
     $title = 'Admin Page';
-    $student = query("SELECT * FROM student");
+    $student = query("SELECT * FROM student LIMIT $index, $dataPerPage");
     $size = count($student);
     if(isset($_POST["search"]))
     {
@@ -15,7 +29,10 @@
 <html lang="en" data-bs-theme="dark">
 <?php include 'addons/head.php';?>
 <body>
-    <?php include "addons/navbar.php"?>
+    <?php 
+        include "addons/navbar.php";
+        include "addons/nav_pages.php";
+    ?>
     <?php
         if(count($student) > 0)
         {
