@@ -10,6 +10,7 @@
             <th scope="col">No.</th>
             <th scope="col">Admin</th>
             <th scope="col">Action</th>
+            <th scope="col">Date</th>
         </tr>
     </thead>
     <tbody>
@@ -21,6 +22,7 @@
             <td scope="row"><?= $i++?></td>
             <td scope="row"><?= $row["admin"]?></td>
             <td scope="row"><?= $row["action"]?></td>
+            <td scope="row"><?= $row["time"]?></td>
         </tr>
         <?php
             endforeach;

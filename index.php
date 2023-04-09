@@ -37,13 +37,11 @@ if(isset($_SESSION["index"]))
 <html lang="en" data-bs-theme="dark">
 <?php include 'addons/head.php';?>
 <body>
-    <?php 
-        include "addons/navbar.php";
-        include "addons/nav_pages.php";
-    ?>
+    <?php include "addons/navbar.php"; ?>
     <?php
         if(count($student) > 0)
         {
+            include "addons/nav_pages.php";
             include "addons/tables.php";
         } else if ($size == 0)
         {

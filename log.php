@@ -40,11 +40,20 @@ if(isset($_SESSION["log"]))
 <html lang="en" data-bs-theme="dark">
 <?php include 'addons/head.php';?>
 <body>
-    <?php 
-        include 'addons/navbar.php';
-        include 'addons/nav_pages.php';
+    <?php include 'addons/navbar.php';?>
+    <?php
+        if(count($changes) > 0)
+        {
+            include 'addons/nav_pages.php';
+            include "addons/logtables.php";
+        } else if ($size == 0)
+        {
+            include "addons/empty.php";
+        } else 
+        {
+            include 'addons/not_exist.php';
+        }
     ?>
-    <?php include 'addons/logtables.php';?> 
     <?php include 'addons/footer.php';?>
 </body>
 </html>

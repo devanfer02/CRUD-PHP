@@ -273,7 +273,9 @@ function addLog($admin, $changes)
     global $connect;
     $admin = htmlspecialchars($admin);
     $changes = htmlspecialchars($changes);    
-    $query = "INSERT INTO logchanges VALUES('','$admin','$changes')";
+    date_default_timezone_set('Asia/Jakarta');
+    $currentTime = date('Y-m-d H:i:s');
+    $query = "INSERT INTO logchanges VALUES('','$admin','$changes','$currentTime')";
     
     mysqli_query($connect, $query);
 }
