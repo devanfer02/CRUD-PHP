@@ -47,6 +47,7 @@ function add($data)
     $isSuccess = mysqli_affected_rows($connect) > 0;
     if($isSuccess)
     {
+        addLog($_SESSION["admin"],"Add a new student ($nama, $prodi, $gambar)");
         return 
         "<h3>Success!</h3><br>".
         "<h4>Data has been successfully added to database!</h4><br>";
@@ -59,6 +60,12 @@ function add($data)
 function delete($id)
 {
     global $connect;
+    $query = "SELECT * FROM student WHERE id=$id";
+    $data = getData($query);
+    $nama = $data["nama"];
+    $prodi = $data["prodi"];
+    $university = filterExtension($data["gambar"],".png");
+    addLog($_SESSION["admin"],"Delete a student from database ($nama, $prodi, $university)");
     mysqli_query($connect,"DELETE FROM student WHERE id = $id");
     return mysqli_affected_rows($connect);
 }
@@ -98,6 +105,8 @@ function update($id, $data)
     $isSuccess = mysqli_affected_rows($connect) > 0;
     if($isSuccess)
     {
+        $gambar = filterExtension($gambar,".png");
+        addLog($_SESSION["admin"],"Update a student data ($nama, $prodi, $gambar)");
         return 
         "<h3>Success!</h3><br>".
         "<h4>Data has been successfully added to database!</h4><br>";
@@ -122,7 +131,6 @@ function getData($query)
 
 function search($keyword)
 {
-    
     $query = "SELECT * FROM student 
     WHERE nama LIKE '%$keyword%' OR
     nim LIKE '%$keyword%' OR
@@ -235,9 +243,9 @@ function checkCookie()
         $query = "SELECT username FROM users WHERE id=$rootid";
         $result = mysqli_query($connect,$query);
         $row = mysqli_fetch_assoc($result);
-
         if($rootkey === hash('sha512',$row['username']))
         {
+            //$_SESSION["admin"] = $row["name"];
             $_SESSION['login'] = true;
         }
     }
@@ -246,7 +254,7 @@ function checkCookie()
 function getPagination($data)
 {
     $pagination = array();
-    $dataPerPage = 5;
+    $dataPerPage = 10;
     $dataTable = count($data);
     $totalPages = (int)ceil($dataTable / $dataPerPage);
     $activePage = isset($_GET["page"]) ? (int)$_GET["page"] : 1;
@@ -260,9 +268,32 @@ function getPagination($data)
     return $pagination;
 }
 
-function addLog()
+function addLog($admin, $changes)
 {
-    //Buat nyimpen history changes oleh admin
+    global $connect;
+    $admin = htmlspecialchars($admin);
+    $changes = htmlspecialchars($changes);    
+    $query = "INSERT INTO logchanges VALUES('','$admin','$changes')";
+    
+    mysqli_query($connect, $query);
+}
+
+function searchLog($keyword)
+{
+    $query = "SELECT * FROM logchanges 
+    WHERE admin LIKE '%$keyword%' OR
+    action LIKE '%$keyword%'";
+
+    if(func_num_args() == 3)
+    {
+        $args = func_get_args();
+        $index = $args[1];
+        $limit = $args[2];
+        $query = "SELECT * FROM logchanges 
+        WHERE admin LIKE '%$keyword%' OR
+        action LIKE '%$keyword%' LIMIT $index,$limit";
+    }
+    return query($query);
 }
 
 function filterExtension($string, $extension)

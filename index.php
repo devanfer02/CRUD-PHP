@@ -15,7 +15,7 @@ $student = query("SELECT * FROM student LIMIT $index, $dataPerPage");
 $size = count($student);
 if(isset($_POST["search"]))
 {
-    $_SESSION["search"] = $_POST["keyword"];
+    $_SESSION["index"] = $_POST["keyword"];
 
     $pagination = getPagination(search($_POST["keyword"]));
     $index = $pagination["index"];
@@ -24,13 +24,13 @@ if(isset($_POST["search"]))
     $student = search($_POST["keyword"],$index,$dataPerPage);
 }
 
-if(isset($_SESSION["search"]))
+if(isset($_SESSION["index"]))
 {
-    $pagination = getPagination(search($_SESSION["search"]));
+    $pagination = getPagination(search($_SESSION["index"]));
     $index = $pagination["index"];
     $dataPerPage = $pagination["limit"]; 
     $totalPages = $pagination["total"];   
-    $student = search($_SESSION["search"],$index,$dataPerPage);
+    $student = search($_SESSION["index"],$index,$dataPerPage);
 }
 ?>
 <!DOCTYPE html>

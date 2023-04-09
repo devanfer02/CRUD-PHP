@@ -1,5 +1,5 @@
 <div class="">
-    <form class="d-flex" role="search" method="post" action="index.php">
+    <form class="d-flex" role="search" method="post" action="log.php">
       <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" name="keyword" autofocus autocomplete="off">
       <button class="btn btn-outline-success" type="submit" name="search">Search</button>
     </form>
@@ -13,10 +13,17 @@
         </tr>
     </thead>
     <tbody>
+        <?php
+            $i = 1;
+            foreach($changes as $row) :
+        ?>
         <tr>
-            <td scope="row"></td>
-            <td scope="row"></td>
-            <td scope="row"></td>
+            <td scope="row"><?= $i++?></td>
+            <td scope="row"><?= $row["admin"]?></td>
+            <td scope="row"><?= $row["action"]?></td>
         </tr>
+        <?php
+            endforeach;
+        ?>
     </tbody>
 </table>
