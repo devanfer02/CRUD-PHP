@@ -1,5 +1,5 @@
 <?php
-include './data/uni_options.php';
+include 'data/uni_options.php';
 
 //Connect to database
 $connect = mysqli_connect("localhost","root","","basics");
@@ -254,7 +254,7 @@ function checkCookie()
 function getPagination($data)
 {
     $pagination = array();
-    $dataPerPage = 10;
+    $dataPerPage = 5;
     $dataTable = count($data);
     $totalPages = (int)ceil($dataTable / $dataPerPage);
     $activePage = isset($_GET["page"]) ? (int)$_GET["page"] : 1;

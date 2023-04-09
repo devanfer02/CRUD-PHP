@@ -1,6 +1,6 @@
 <?php
 include 'handlers/functions.php';
-include 'data/uni_options.php';
+include 'handlers/data/uni_options.php';
 session_start();
 checkCookie();
 checkSession();
