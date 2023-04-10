@@ -52,7 +52,7 @@ if(isset($_SESSION["index"]))
         }
     ?>
     <?php if(count($student) > 0 ): ?> 
-        <a href="print.php" class="btn btn-primary" style="margin-left:12px;">Print</a>
+        <a href="print.php" class="btn btn-primary" style="margin-left:12px;" target="_blank">Print</a>
     <?php endif; ?>
     <?php include "addons/footer.php"?>
     <script src="javascript/index.js"></script>

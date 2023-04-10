@@ -254,7 +254,7 @@ function checkCookie()
 function getPagination($data)
 {
     $pagination = array();
-    $dataPerPage = 5;
+    $dataPerPage = 10;
     $dataTable = count($data);
     $totalPages = (int)ceil($dataTable / $dataPerPage);
     $activePage = isset($_GET["page"]) ? (int)$_GET["page"] : 1;

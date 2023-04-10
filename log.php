@@ -4,9 +4,6 @@ session_start();
 checkCookie();
 checkSession();
 $title = "Log Page";
-//TODO : Nambah log activity untuk ngecek
-//admin sudah melakukan perubahan apa saja
-//ke webnya, tambahkan fitur pagination jg disini
 $pagination = getPagination(query("SELECT * FROM logchanges"));
 $index = $pagination["index"];
 $dataPerPage = $pagination["limit"];
