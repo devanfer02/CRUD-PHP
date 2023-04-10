@@ -37,12 +37,25 @@ To play with this crud webapp please followw the following instructions
 |  username| varchar |   50    |     |
 |  password| varchar |   300   |     |
 |  email   | varchar |   100   |     |
+|  name    | varchar |   250   |     |
++----------+---------+---------+-----+
+```
+- Make a table with name ```logchanges``` with given category
+```
++----------+---------+---------+-----+
+|  nama    |  jenis  | panjang | A_I |
++----------+---------+---------+-----+
+|  id      |   int   |   11    |  On |
+|  admin   | varchar |   250   |     |
+|  action  | varchar |   250   |     |
+|  time    | varchar |   250   |     |
 +----------+---------+---------+-----+
 ```
 
 ### Clone this project
 - Clone this project using whatever you like 
-- Make sure the folder is inside the htdocs xampp
+- Make sure the folder is inside the htdocs 
+- Also run the command ```composer install``` to install all dependancies
 
 ### Start Localhost
 - Go to localhost/dashboard
