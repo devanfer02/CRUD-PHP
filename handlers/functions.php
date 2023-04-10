@@ -284,7 +284,7 @@ function searchLog($keyword)
 {
     $query = "SELECT * FROM logchanges 
     WHERE admin LIKE '%$keyword%' OR
-    action LIKE '%$keyword%'";
+    action LIKE '%$keyword%' OR time LIKE '%$keyword%'";
 
     if(func_num_args() == 3)
     {
@@ -293,7 +293,9 @@ function searchLog($keyword)
         $limit = $args[2];
         $query = "SELECT * FROM logchanges 
         WHERE admin LIKE '%$keyword%' OR
-        action LIKE '%$keyword%' LIMIT $index,$limit";
+        action LIKE '%$keyword%' OR
+        time LIKE '%$keyword%'
+        LIMIT $index,$limit";
     }
     return query($query);
 }
