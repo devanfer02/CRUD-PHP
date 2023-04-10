@@ -55,7 +55,7 @@ To play with this crud webapp please followw the following instructions
 ### Clone this project
 - Clone this project using whatever you like 
 - Make sure the folder is inside the htdocs 
-- Also run the command ```composer install``` to install all dependancies
+- Also run the command ```composer install``` to install all dependancies required
 
 ### Start Localhost
 - Go to localhost/dashboard

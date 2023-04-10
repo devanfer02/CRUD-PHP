@@ -27,7 +27,8 @@ $html = '<!DOCTYPE html>
             $html .= 
             '<tr>
                 <td>'.$i++.'</td>
-                <td><img src="/img/uni_logos/'.$row['gambar'].'" width="50" height="50"></td>
+                <td style="text-align:center;"><img src="img/uni_logos/'.$row['gambar'].'" width="50" height="50" 
+                style="vertical-align:middle;"></td>
                 <td>'.$row["nim"].'</td>
                 <td>'.$row["nama"].'</td>
                 <td>'.$row["email"].'</td>
@@ -40,6 +41,7 @@ $html .= '</table>
 </html>';
 
 $mpdf = new \Mpdf\Mpdf();
+$mpdf->showImageErrors = true;
 $mpdf->WriteHTML($html);
-$mpdf->Output('output.pdf', 'D');
+$mpdf->Output('ListStudent.pdf', \Mpdf\Output\Destination::INLINE);
 ?>
