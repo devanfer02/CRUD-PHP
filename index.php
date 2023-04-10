@@ -51,6 +51,9 @@ if(isset($_SESSION["index"]))
             include 'addons/not_exist.php';
         }
     ?>
+    <?php if(count($student) > 0 ): ?> 
+        <a href="print.php" class="btn btn-primary" style="margin-left:12px;">Print</a>
+    <?php endif; ?>
     <?php include "addons/footer.php"?>
     <script src="javascript/index.js"></script>
 </body>
