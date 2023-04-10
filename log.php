@@ -3,7 +3,7 @@ include "handlers/functions.php";
 session_start();
 checkCookie();
 checkSession();
-$title = "Log Page";
+
 $pagination = getPagination(query("SELECT * FROM logchanges"));
 $index = $pagination["index"];
 $dataPerPage = $pagination["limit"];
@@ -15,9 +15,9 @@ $changes = query("SELECT * FROM logchanges LIMIT $index, $dataPerPage");
 $size = count($changes);
 if(isset($_POST["search"]))
 {
-    $_SESSION["search"] = $_POST["keyword"];
+    $_SESSION["log"] = $_POST["keyword"];
 
-    $pagination = getPagination(search($_POST["keyword"]));
+    $pagination = getPagination(searchLog($_POST["keyword"]));
     $index = $pagination["index"];
     $dataPerPage = $pagination["limit"]; 
     $totalPages = $pagination["total"];   
@@ -26,7 +26,7 @@ if(isset($_POST["search"]))
 
 if(isset($_SESSION["log"]))
 {
-    $pagination = getPagination(search($_SESSION["log"]));
+    $pagination = getPagination(searchLog($_SESSION["log"]));
     $index = $pagination["index"];
     $dataPerPage = $pagination["limit"]; 
     $totalPages = $pagination["total"];   
