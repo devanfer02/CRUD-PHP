@@ -330,13 +330,20 @@ function verify($data)
         <script>
             alert('Confirmation code sent!');
         </script>";
+        return true;
     } else 
     {
         echo "        
         <script>
             alert('Failed to send to email');
-        </script>";    
+        </script>"; 
+        return false;   
     }
+}
+
+function changePassword($data)
+{
+
 }
 
 function generateCode()
