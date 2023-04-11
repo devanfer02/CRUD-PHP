@@ -7,9 +7,13 @@ if(isset($_POST["send"]))
 {
     $status = verify($_POST);
 }
+if(isset($_POST["confirm"]))
+{
+    $confirm;
+}
 if(isset($_POST["change"]))
 {
-    
+    $change;
 }
 ?>
 <!DOCTYPE html>
@@ -43,6 +47,19 @@ if(isset($_POST["change"]))
                     </div>
                     <div>
                         <?php if(isset($status) && $status ): ?>
+                            <?php header("Location: send.php");?>
+                            <form action="" method="post">
+                                <label for="code" class="label">Verification Code</label>
+                                <input type="text" class="form-control" id="code" name="code"
+                                autocomplete="off" required>
+                                <div class="text-center login-btn">
+                                    <button type="submit" class="btn btn-primary" name="confirm">Confirm Code</button>
+                                </div>
+                            </form>
+                        <?php endif;?>
+                    </div>
+                    <div>
+                        <?php if(isset($confirm) && $confirm ): ?>
                             <form action="" method="post">
                                 <label for="password" class="label">Password</label>
                                 <input type="text" class="form-control" id="password" name="password"

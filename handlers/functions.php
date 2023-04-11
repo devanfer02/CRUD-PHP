@@ -302,39 +302,25 @@ function searchLog($keyword)
 
 function verify($data)
 {
-    // $username = $data["username"];
-    // $query = "SELECT * FROM users WHERE
-    // username='$username'";
+    $username = $data["username"];
+    $query = "SELECT * FROM users WHERE
+    username='$username'";
 
-    // $row = getData($query);
-    // if(!$row)
-    // {
-    //     return false;
-    // }
-
-    // $code = generateCode();
-    // $to = $row["email"];
-    // $subject = "CRUD Password Reset"; 
-    // $message = "
-    //     Your confirmation password code is ".$code."\n
-    //     If you didn't reset password, please contact admin"; 
-    // $headers = "From: noreplyphpadmin@gmail.com";
-    
-    // if(mail($to, $subject, $message,$headers)) 
-    // {
-    //     echo "        
-    //     <script>
-    //         alert('Confirmation code sent!');
-    //     </script>";
-    //     return true;
-    // } else 
-    // {
-    //     echo "        
-    //     <script>
-    //         alert('Failed to send to email');
-    //     </script>"; 
-    // }
+    $row = getData($query);
+    if(!$row)
+    {
+        return false;
+    }
     //TODO : phpmailer install
+    $mail = array();
+    $mail["code"] = generateCode();
+    $mail["to"] = $row["email"];
+    $mail["subject"] = "CRUD Password Reset"; 
+    $mail["message"] = "
+        Your confirmation password code is ".$code."\n
+        If you didn't reset password, please contact admin"; 
+    $_SESSION["mail"] = $mail;
+    return true;
 }
 
 function changePassword($data)
