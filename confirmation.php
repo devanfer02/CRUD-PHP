@@ -3,7 +3,7 @@ include 'handlers/functions.php';
 
 $title = "Confirmation Page";
 
-if(isset($_POST["submit"]))
+if(isset($_POST["send"]))
 {
     $status = verify($_POST);
 }
@@ -12,7 +12,7 @@ if(isset($_POST["submit"]))
 <html lang="en" data-bs-theme="dark">
 <?php include 'addons/head.php';?>
 <body>
-<div class="container mt-5">
+    <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card">
@@ -20,25 +20,38 @@ if(isset($_POST["submit"]))
                         <h3 class="text-center">Confirmation</h3>
                 </div>
                 <div class="card-body">
-                    <form action="" method="post" >
-                        <div class="form-group">
-                            <label for="username" class="label">Username</label>
-                            <input type="text" class="form-control" id="username" name="username"
-                            autocomplete="off" required>
-                        </div>
-                        <div>
-                            <?php if(isset($status) && $status ): ?>
-                                <form action="" method="post">
-                                    <label for="password" class="label">Password</label>
-                                    <input type="text" class="form-control" id="password" name="password"
-                                    autocomplete="off" required>
-                                </form>
-                            <?php endif;?>
-                        </div>
-                        <div class="text-center login-btn">
-                            <button type="submit" class="btn btn-primary" name="login">Send Code</button>
-                        </div>
-                    </form>
+                    <div class="form-group">
+                        <?php if(!isset($status) || !$status): ?>
+                            <form action="" method="post">
+                                <label for="username" class="label">Username</label>
+                                <input type="text" class="form-control" id="username" name="username"
+                                autocomplete="off" required>
+                                <?php if (isset($status) && !$status) : ?>
+                                    <p class="warn">
+                                        User doesnt exist
+                                    </p>
+                                <?php endif;?>
+                                <div class="text-center login-btn">
+                                    <button type="submit" class="btn btn-primary" name="send">Send Code</button>
+                                </div>
+                            </form>
+                        <?php endif;?>
+                    </div>
+                    <div>
+                        <?php if(isset($status) && $status ): ?>
+                            <form action="" method="post">
+                                <label for="password" class="label">Password</label>
+                                <input type="text" class="form-control" id="password" name="password"
+                                autocomplete="off" required>
+                                <label for="confirm" class="label">Confirm Password</label>
+                                <input type="text" class="form-control" id="confirm" name="confirm"
+                                autocomplete="off" required>
+                                <div class="text-center login-btn">
+                                    <button type="submit" class="btn btn-primary" name="send">Change Password</button>
+                                </div>
+                            </form>
+                        <?php endif;?>
+                    </div>
                 </div>
                 <hr>
                 <div class="card-body register">
@@ -70,6 +83,8 @@ if(isset($_POST["submit"]))
         margin-left:1px;
     }
     .warn{
+        margin-top: 10px;
+        margin-left: 2px;
         color: red;
     }
 
