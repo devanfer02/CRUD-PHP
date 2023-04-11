@@ -38,8 +38,8 @@ if(isset($_POST["register"]))
 <html lang="en" data-bs-theme="dark">
 <?php include 'addons/head.php';?>
 <body>
-    <div class="container card">
-        <div class="d-flex justify-content-center align-items-center border-bottom mb-4" style="padding-top: 7px;">
+    <div class="container card" style="margin-top:10px; margin-bottom:10px;">
+        <div class="d-flex justify-content-center align-items-center border-bottom mb-4 card-header" style="padding-top: 7px;">
             <h3 class="text-center" style="padding-bottom: 7px;">
                 Registration 
             </h3>
