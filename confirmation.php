@@ -7,6 +7,10 @@ if(isset($_POST["send"]))
 {
     $status = verify($_POST);
 }
+if(isset($_POST["change"]))
+{
+    
+}
 ?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
@@ -47,7 +51,7 @@ if(isset($_POST["send"]))
                                 <input type="text" class="form-control" id="confirm" name="confirm"
                                 autocomplete="off" required>
                                 <div class="text-center login-btn">
-                                    <button type="submit" class="btn btn-primary" name="send">Change Password</button>
+                                    <button type="submit" class="btn btn-primary" name="change">Change Password</button>
                                 </div>
                             </form>
                         <?php endif;?>

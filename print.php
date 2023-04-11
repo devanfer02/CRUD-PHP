@@ -2,6 +2,10 @@
 require_once 'vendor/autoload.php';
 include 'handlers/functions.php';
 
+session_start();
+checkCookie();
+checkSession();
+
 $student = query("SELECT * FROM student");
 $html = '<!DOCTYPE html>
 <html lang="en">
