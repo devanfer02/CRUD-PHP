@@ -40,9 +40,9 @@ if(isset($_POST["register"]))
 <body>
     <div class="container card">
         <div class="d-flex justify-content-center align-items-center border-bottom mb-4" style="padding-top: 7px;">
-            <h1 class="text-center" style="padding-bottom: 7px;">
+            <h3 class="text-center" style="padding-bottom: 7px;">
                 Registration 
-            </h1>
+            </h3>
         </div>
         <form action="" method="post" style="padding-top: 10px; padding-left: 14px">
             <div class="mb-3">

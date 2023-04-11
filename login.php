@@ -25,12 +25,12 @@ if(isset($_POST["login"]))
                         <div class="form-group">
                             <label for="username" class="label">Username</label>
                             <input type="text" class="form-control" id="username" name="username"
-                            placeholder="Enter username" autocomplete="off" required>
+                            autocomplete="off" required>
                         </div>
                         <div class="form-group">
                             <label for="password" class="label">Password</label>
                             <input type="password" class="form-control" id="password" name="password"
-                            placeholder="Enter password" autocomplete="off" required>
+                            autocomplete="off" required>
                         </div>
                         <div class="form-check">
                             <input type="checkbox" class="form-check-input" name="remember" id="remember">
@@ -50,6 +50,9 @@ if(isset($_POST["login"]))
                         <div class="text-center login-btn">
                             <button type="submit" class="btn btn-primary" name="login">Login</button>
                         </div>
+                        <form action="" method="post">
+                            <a href="confirmation.php" class="forgot-link">Forgot Password</a>
+                        </form>
                     </form>
                 </div>
                 <hr>
@@ -88,6 +91,14 @@ if(isset($_POST["login"]))
         color: red;
     }
 
+    .forgot-link{
+        text-decoration: none;
+        color:#007bff;
+    }
+
+    .forgot-link:hover{
+        color: white;
+    }
     form{
         min-height: 220px;
     }

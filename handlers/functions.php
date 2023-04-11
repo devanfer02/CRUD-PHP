@@ -300,6 +300,57 @@ function searchLog($keyword)
     return query($query);
 }
 
+function verify($data)
+{
+    $username = $data["username"];
+    $query = "SELECT * FROM users WHERE
+    username='$username'";
+
+    $row = getData($query);
+    if(!$row)
+    {
+        echo "    
+        <script>
+            alert('Users doesnt exst');
+        </script>";
+        return;
+    }
+
+    $code = generateCode();
+    $to = $row["email"];
+    $subject = "CRUD Password Reset"; 
+    $message = "
+        Your confirmation password code is ".$code."\n
+        If you didn't reset password, please contact admin"; 
+    $headers = "From : noreplyphpadmin@gmail.com";
+
+    if(mail($to, $subject, $message, $headers)) 
+    {
+        echo "        
+        <script>
+            alert('Confirmation code sent!');
+        </script>";
+    } else 
+    {
+        echo "        
+        <script>
+            alert('Failed to send to email');
+        </script>";    
+    }
+}
+
+function generateCode()
+{
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $len = strlen($characters);
+    $uniqueString = '';
+    for ($i = 0; $i < $len; $i++) {
+        $randomIndex = mt_rand(0, $len - 1);
+        $uniqueString .= $characters[$randomIndex];
+    }
+    return $uniqueString;
+}
+
 function filterExtension($string, $extension)
 {
     return substr($string,0,strrpos($string,$extension));
