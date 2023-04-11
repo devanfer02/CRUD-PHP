@@ -14,10 +14,10 @@
                 <th scope="col" style="text-align: center;">No.</th>
                 <th scope="col" style="text-align: center;">Action</th>
                 <th scope="col" style="text-align: center;">University</th>
-                <th scope="col" style="text-align: center;">NIM</th>
-                <th scope="col" style="text-align: center;">Name</th>
-                <th scope="col" style="text-align: center;">Email</th>
-                <th scope="col" style="text-align: center;">Major</th>
+                <th scope="col" >NIM</th>
+                <th scope="col" >Name</th>
+                <th scope="col" >Email</th>
+                <th scope="col" >Major</th>
             </tr>
         </thead>
         <tbody>
@@ -34,10 +34,10 @@
                 <td style="text-align:center;">
                     <img src="img/uni_logos/<?= $row["gambar"]?>" width="50" height="50" alt="" style="vertical-align:middle;">
                 </td>
-                <td style="text-align:center;"><?= $row["nim"]?></td>
-                <td style="text-align:center;"><?= $row["nama"]?></td>
-                <td style="text-align:center;"><?= $row["email"]?></td>
-                <td style="text-align:center;"><?= $row["prodi"]?></td>
+                <td><?= $row["nim"]?></td>
+                <td><?= $row["nama"]?></td>
+                <td><?= $row["email"]?></td>
+                <td><?= $row["prodi"]?></td>
             </tr>
             <?php
                 endforeach;
