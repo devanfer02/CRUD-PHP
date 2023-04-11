@@ -4,7 +4,7 @@ $universities = array(
     "Politeknik Negeri Surabaya",
     "Politeknik Negeri Malang",
     "Univeristas Telkom",
-    "Universitas Brawijaya",
+    "Universitas Brawijaya", 
     "Universitas Gadjah Mada",
     "Universitas Indonesia",
     "Universitas Negeri Malang",

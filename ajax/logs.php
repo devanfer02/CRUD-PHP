@@ -2,7 +2,7 @@
 include '../handlers/functions.php';
 $keyword = $_GET["keyword"];
 $_SESSION["log"] = $keyword;
-
+ 
 $pagination = getPagination(search($_SESSION["log"]));
 $index = $pagination["index"];
 $dataPerPage = $pagination["limit"]; 

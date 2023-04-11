@@ -308,7 +308,7 @@ function verify($data)
 
     $row = getData($query);
     if(!$row)
-    {
+    { 
         return false;
     }
     //TODO : phpmailer install

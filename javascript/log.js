@@ -10,7 +10,7 @@ keyword.addEventListener('keypress',() =>
     {
         if(ajax.readyState == 4 && ajax.status == 200)
         {
-            container.innerHTML = ajax.responseText;
+            container.innerHTML = ajax.responseText; 
         }
     }
 

@@ -2,7 +2,7 @@ const keyword = document.getElementById("keyword");
 const btnSearch = document.getElementById("btn-search");
 const container = document.getElementById("container");
 
-keyword.addEventListener('keyup',() => 
+keyword.addEventListener('keyup',() =>  
 {
     const ajax = new XMLHttpRequest();
 

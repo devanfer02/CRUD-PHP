@@ -10,4 +10,4 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://unpkg.com/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <title><?=$title?></title>
-</head>
+</head> 

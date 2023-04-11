@@ -7,7 +7,7 @@ checkSession();
 $title = 'Admin Page';
 $university_list = json_encode($universities);
 echo "<script>let uni = $university_list;</script>";
-if(isset($_POST["submit"]))
+if(isset($_POST["submit"])) 
 {
     $isSuccess = add($_POST); 
 }

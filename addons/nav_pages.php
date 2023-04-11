@@ -10,4 +10,4 @@
         </form>
     <?php endfor; ?>
     <a href="?page=<?=$activePage < $totalPages ? $activePage + 1 : $activePage?>" class="btn btn-primary">&gt</a>
-</div>
+</div>  

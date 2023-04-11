@@ -3,14 +3,14 @@ include "./handlers/functions.php";
 session_start();
 checkCookie();
 checkSession();
-$id = $_GET["id"];
+$id = $_GET["id"]; 
 if(delete($id) > 0)
 {
     echo "
     <script>
         alert('Data has been successfully deleted!');
         document.location.href = 'index.php';
-    </script>";
+    </script>"; 
 } else 
 {
     echo "

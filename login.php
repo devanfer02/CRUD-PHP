@@ -50,9 +50,6 @@ if(isset($_POST["login"]))
                         <div class="text-center login-btn">
                             <button type="submit" class="btn btn-primary" name="login">Login</button>
                         </div>
-                        <form action="" method="post">
-                            <a href="confirmation.php" class="forgot-link">Forgot Password</a>
-                        </form>
                     </form>
                 </div>
                 <hr>

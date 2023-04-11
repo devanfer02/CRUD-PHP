@@ -75,6 +75,5 @@ if(isset($_POST["register"]))
             <a href="login.php" class="btn btn-primary" style="margin-bottom: 18px;">Login</a>
         </div>
     </div>
-
 </body>
 </html>

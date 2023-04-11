@@ -3,7 +3,7 @@ include "handlers/functions.php";
 session_start();
 checkCookie();
 checkSession();
-
+ 
 $pagination = getPagination(query("SELECT * FROM logchanges"));
 $index = $pagination["index"];
 $dataPerPage = $pagination["limit"];

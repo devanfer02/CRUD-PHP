@@ -2,7 +2,7 @@
 include 'handlers/functions.php';
 session_start();
 checkCookie();
-checkSession();
+checkSession(); 
 
 $pagination = getPagination(query("SELECT * FROM student"));
 $index = $pagination["index"];

@@ -1,5 +1,5 @@
 <?php
-require_once 'vendor/autoload.php';
+require_once 'vendor/autoload.php'; 
 include 'handlers/functions.php';
 
 session_start();

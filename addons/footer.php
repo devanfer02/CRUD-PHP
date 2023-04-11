@@ -4,7 +4,7 @@
 <footer style="padding-top: 10px;">
     <div class="card">
     <div class="card-header">
-        Social Media
+        Social Media 
     </div>
     <div class="card-body">
         <h5 class="card-title">Hello Everyone!</h5>

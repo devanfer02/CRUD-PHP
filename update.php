@@ -14,7 +14,7 @@ echo "<script>let uni = $university_list;</script>";
 if(isset($_POST["submit"]))
 {
     $isSuccess = update($id ,$_POST); 
-}
+} 
 ?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">

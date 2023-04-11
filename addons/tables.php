@@ -25,7 +25,7 @@
                 $i = 1;
                 foreach($student as $row) :
             ?>
-            <tr>
+            <tr> 
                 <td style="text-align:center;"scope="row"><?= $i++?></td>
                 <td style="text-align:center;">
                     <a class="btn btn-success btn-sm" href="update.php?id=<?= $row["id"]?>">UPDATE</a> 

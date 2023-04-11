@@ -6,5 +6,4 @@
     <div class="text-center">
         <a href="./index.php" class="btn btn-lg bg-primary text-white">OK</a>
     </div>
-
-</div>
+</div> 

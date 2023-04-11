@@ -5,7 +5,7 @@
       <input type="hidden" name="search" value="true">  
       <button class="btn btn-outline-success" type="submit" name="search" id="btn-search">Search</button>
     </form>
-</div>
+</div> 
 <div id="container">
     <table class="table table-striped" border="1" cellpadding="10" cellspacing="0">
         <thead>

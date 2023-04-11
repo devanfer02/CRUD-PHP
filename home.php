@@ -6,7 +6,7 @@ checkSession();
 $title = 'Home Page';
 if(isset($_POST["submit"]))
 {
-    $isSuccess = add($_POST); 
+    $isSuccess = add($_POST);  
 }
 ?>
 <!DOCTYPE html>
