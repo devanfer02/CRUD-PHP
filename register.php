@@ -38,42 +38,42 @@ if(isset($_POST["register"]))
 <html lang="en" data-bs-theme="dark">
 <?php include 'addons/head.php';?>
 <body>
-    <!-- <?php include 'addons/navbar.php';?> -->
-    <div class="d-flex justify-content-center align-items-center border-bottom mb-4" style="padding-top: 7px;">
-        <h1 class="text-center" style="padding-bottom: 7px;">
-            [Registration Page]
-        </h1>
-    </div>
-    <form action="" method="post" style="padding-top: 10px; padding-left: 14px">
-        <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" name="name" id="name" autocomplete="off" required>
+    <div class="container card">
+        <div class="d-flex justify-content-center align-items-center border-bottom mb-4" style="padding-top: 7px;">
+            <h1 class="text-center" style="padding-bottom: 7px;">
+                Registration 
+            </h1>
         </div>
-        <div class="mb-3">
-            <label for="username" class="form-label">Username</label>
-            <input type="text" class="form-control" name="username" id="username" autocomplete="off" required>
+        <form action="" method="post" style="padding-top: 10px; padding-left: 14px">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" name="name" id="name" autocomplete="off" required>
+            </div>
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" name="username" id="username" autocomplete="off" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" name="password" id="password" autocomplete="off" required>
+            </div>
+            <div class="mb-3">
+                <label for="confirm" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" name="confirm" id="confirm" autocomplete="off" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="text" class="form-control" name="email" id="email" autocomplete="off" required>
+            </div>
+            <button type="submit" class="btn btn-primary" name="register">Register</button>
+        </form>
+        <div style="padding-left:15px; padding-top:1px;">
+            <hr>
+            <h5>
+                Have an account already? 
+            </h5>
+            <a href="login.php" class="btn btn-primary" style="margin-bottom: 18px;">Login</a>
         </div>
-        <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" name="password" id="password" autocomplete="off" required>
-        </div>
-        <div class="mb-3">
-            <label for="confirm" class="form-label">Confirm Password</label>
-            <input type="password" class="form-control" name="confirm" id="confirm" autocomplete="off" required>
-        </div>
-        <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="text" class="form-control" name="email" id="email" autocomplete="off" required>
-        </div>
-        <button type="submit" class="btn btn-primary" name="register">Register</button>
-    </form>
-    <div style="padding-left:15px; padding-top:1px;">
-        <hr>
-        <h4>
-            Have an account already? 
-        </h4>
-        <a href="login.php" class="btn btn-primary" style="padding-bottom: 8px;">Login</a>
-        <hr>
     </div>
 
 </body>
