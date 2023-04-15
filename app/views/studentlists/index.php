@@ -20,21 +20,27 @@
             </tr>
         </thead>
         <tbody>
+        <?php
+                $i = 1;
+                foreach($data["students"] as $student) :
+            ?>
             <tr> 
-                <td style="text-align:center;"scope="row"></td>
+                <td style="text-align:center;"scope="row"><?= $i++?></td>
                 <td style="text-align:center;">
-                    <a class="btn btn-success btn-sm" >UPDATE</a> 
-                    <a class="btn btn-danger btn-sm" >DELETE</a>
+                    <a class="btn btn-success btn-sm" href="">UPDATE</a> 
+                    <a class="btn btn-danger btn-sm" href="">DELETE</a>
                 </td>
                 <td style="text-align:center;">
-                    <!-- <img src="img/uni_logos/<?= $row["gambar"]?>" width="50" height="50" alt="" style="vertical-align:middle;"> -->
-                    <img src="" alt="">
+                    <img src="../public/img/uni_logos/<?= $student["university"]?>.png" width="50" height="50" alt="" style="vertical-align:middle;">
                 </td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><?= $student["nim"]?></td>
+                <td><?= $student["name"]?></td>
+                <td><?= $student["email"]?></td>
+                <td><?= $student["major"]?></td>
             </tr>
+            <?php
+                endforeach;
+                ?>
         </tbody>
     </table>
 </div>
