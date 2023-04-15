@@ -4,6 +4,7 @@
             <h1 class="display-4">CRUD PHP</h1>
             <p class="lead">A CRUD Webapp using PHP and MYSQL</p>
             <hr class="my-4">
+            <p class="lead">Hello <?= $data["name"] ;?>  ^_^, Welcome to PHP CRUD Web App! </p>
             <p class="lead">This is a web application that allows you to Create, Read, Update, and Delete data.</p>
             <p class="lead">You can use this app to manage your data efficiently and easily.</p>
             <p class="lead">This CRUD Web App is implemented with php programming language</p>
@@ -13,6 +14,9 @@
     <hr>
     <div class="container">
         <div class="card">
+            <div class="card card-body">
+                <h3>Sections </h3>
+            </div>
             <div class="card-body">
                 <h3>List Student Section</h3>    
                 <p>
