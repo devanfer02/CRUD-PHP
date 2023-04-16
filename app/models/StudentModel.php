@@ -16,9 +16,9 @@ class StudentModel
         return $this->db->resultSet();
     }
 
-    public function getStudentById() 
+    public function getStudentById($id) 
     {
-        $this->db->query('SELECT * FROM ' . $this->table . 'WHERE id=:id');
+        $this->db->query('SELECT * FROM ' . $this->tableName . ' WHERE id=:id');
         $this->db->bind('id', $id);
         return $this->db->singleSet();
     }

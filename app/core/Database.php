@@ -37,7 +37,20 @@ class Database
     {
         if($type == null) 
         {
-            $type = $this->setType($value);
+            switch (true)
+            {
+                case is_int($value) :
+                    $type = PDO::PARAM_INT;
+                    break;
+                case is_bool($value) :
+                    $type = PDO::PARAM_BOOL;
+                    break;
+                case is_null($value) :
+                    $type = PDO::PARAM_NULL;
+                    break;
+                default :
+                    $type = PDO::PARAM_STR;
+            }   
         }
 
         $this->statement->bindValue($param, $value, $type);
@@ -58,25 +71,5 @@ class Database
     { 
         $this->execute(); 
         return $this->statement->fetch(PDO::FETCH_ASSOC);
-    }
-
-    private function setType($value)
-    {
-        $type = PDO::PARAM_STR;
-        switch (true)
-        {
-            case is_int($value) :
-                $type = PDO::PARAM_INT;
-                break;
-            case is_bool($value) :
-                $type = PDO::PARAM_BOOL;
-                break;
-            case is_null($value) :
-                $type = PDO::PARAM_NULL;
-                break;
-            default :
-                $type = PDO::PARAM_STR;
-        }
-        return $type;
     }
 }
