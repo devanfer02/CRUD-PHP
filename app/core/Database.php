@@ -35,9 +35,9 @@ class Database
 
     public function bind($param, $value, $type = null)
     {
-        if(type == null) 
+        if($type == null) 
         {
-            $type = setType($value);
+            $type = $this->setType($value);
         }
 
         $this->statement->bindValue($param, $value, $type);
