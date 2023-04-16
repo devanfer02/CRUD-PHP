@@ -13,7 +13,6 @@ class Data :
                 self.prodi = prodi
                 for row in reader : 
                     self.data.append(row)
-                print(len(self.data))
                 
         except Exception as error:
             print(f"Error: {error}")
@@ -36,22 +35,34 @@ class Data :
     def addPetik(self, data) : 
         return "'" + data + "'" 
     
+    def deleteTxt(self) : 
+        with open('formatted.txt','w') as file :
+            file.truncate(0)
+
+    def updateRow(self, row) : 
+        updated_row = [row[0], self.cleanName(row[2]), row[1], self.prodi[0], self.createDummyEmail(row[2]), self.universitas[0]]
+        return updated_row
+
+    def writeContent(self, file) : 
+        for row in self.data :
+            updated_row = [row[0], self.cleanName(row[2]), row[1], self.prodi[0], self.createDummyEmail(row[2]), self.universitas[0]]
+            data = '(' 
+            for j, column in enumerate(updated_row) :
+                if(j == len(updated_row) - 1) : 
+                    data = data + self.addPetik(column) + '), '
+                elif(j == 0) : 
+                    data = data + column + ', '
+                else : 
+                    data = data + self.addPetik(column) + ', '
+            file.write(data + '\n')
+            print('.',end='')
+    
     def printData(self) :
         try :
+            self.deleteTxt()
             with open('formatted.txt','w') as file :  
                 print('Loading',end='')      
-                for row in self.data :
-                    updated_row = [row[0], self.cleanName(row[2]), row[1], self.prodi[0], self.createDummyEmail(row[2]), self.universitas[0]]
-                    data = '(' 
-                    for j, column in enumerate(updated_row) :
-                        if(j == len(updated_row) - 1) : 
-                            data = data + self.addPetik(column) + '), '
-                        elif(j == 0) : 
-                            data = data + column + ', '
-                        else : 
-                            data = data + self.addPetik(column) + ', '
-                    file.write(data + '\n')
-                    print('.',end='')
+                self.writeContent(file)
                 print('\nStatus : ',end='')
                 print('Write Success!')
         except Exception as error :
