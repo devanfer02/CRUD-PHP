@@ -45,7 +45,7 @@ class Data :
 
     def writeContent(self, file) : 
         for row in self.data :
-            updated_row = [row[0], self.cleanName(row[2]), row[1], self.prodi[0], self.createDummyEmail(row[2]), self.universitas[0]]
+            updated_row =self.updateRow(row)
             data = '(' 
             for j, column in enumerate(updated_row) :
                 if(j == len(updated_row) - 1) : 
