@@ -15,6 +15,12 @@ To play with this crud webapp please followw the following instructions
 - Turn on or start the apache and mysql
 
 ### Making database in phpmyadmin
+
+#### Use Repo Table
+You can use the sql folder in app to instantly create table in your database, but makesure to modify the config 
+to match your own database name.
+
+#### Create Your Own Table
 - After you turn on the apache and mysql, go to ```localhost/phpmyadmin/```
 - On the left sidebar, click new and make database with name ```crudphpmvc```
 - Make a table with name ```student``` with given category

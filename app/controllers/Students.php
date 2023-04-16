@@ -1,6 +1,6 @@
 <?php
 
-class StudentLists extends Controller
+class Students extends Controller
 {
     public function index()
     {
@@ -8,7 +8,7 @@ class StudentLists extends Controller
         $data["students"] = $this->model("StudentModel")->getStudents();
         $this->view('templates/head',$data);
         $this->view('templates/navbar');
-        $this->view('studentlists/index',$data);
+        $this->view('students/index',$data);
         $this->view('templates/footer');
     }
 }

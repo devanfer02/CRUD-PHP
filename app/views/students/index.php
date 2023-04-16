@@ -27,8 +27,8 @@
             <tr> 
                 <td style="text-align:center;"scope="row"><?= $i++?></td>
                 <td style="text-align:center;">
-                    <a class="btn btn-success btn-sm" href="">UPDATE</a> 
-                    <a class="btn btn-danger btn-sm" href="">DELETE</a>
+                    <a class="btn btn-success btn-sm" href="<?=BASEURL;?>/students/update/<?=$student["id"];?>">UPDATE</a> 
+                    <a class="btn btn-danger btn-sm" href="<?=BASEURL;?>/students/delete/<?=$student["id"];?>">DELETE</a>
                 </td>
                 <td style="text-align:center;">
                     <img src="../public/img/uni_logos/<?= $student["university"]?>.png" width="50" height="50" alt="" style="vertical-align:middle;">
