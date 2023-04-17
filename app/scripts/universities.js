@@ -1,5 +1,3 @@
-import universities from "./universityList"
-
 const universities = 
 [
     "Universitas Bina Nusantara",
@@ -22,8 +20,10 @@ const universities =
     "Universitas Negeri Jakarta"
 ];
 
-$(document).ready(() => {
+const autocompleteuni = () => {
     $('#university').autocomplete({
         source: universities
     })
-})
+}
+
+export default autocompleteuni;
