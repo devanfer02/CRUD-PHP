@@ -12,6 +12,15 @@ class Students extends Controller
         $this->view('templates/footer');
     }
 
+    public function add() 
+    {
+        $data["title"] = "Add Student";
+        $this->view('templates/head',$data);
+        $this->view('templates/navbar');
+        $this->view('students/add',$data);
+        $this->view('templates/footer');
+    }
+
     public function update($id)
     {
         $data["title"] = "Update Student Detail";

@@ -8,10 +8,10 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-link custom-nav" href="<?= BASEURL;?>/students">List Students</a>
-                    <a class="nav-link custom-nav" href="<?= BASEURL;?>/studentadd"">Add Student</a>
-                    <a class="nav-link custom-nav" href="<?= BASEURL;?>/logchanges"">Log Changes</a>
+                    <a class="nav-link custom-nav" href="<?= BASEURL;?>/students/add">Add Student</a>
+                    <a class="nav-link custom-nav" href="<?= BASEURL;?>/logchanges">Log Changes</a>
                     <a class="nav-link custom-nav" href="<?= BASEURL;?>/about">About</a>
-                    <a class="nav-link custom-nav" href="<?= BASEURL;?>/logout"">Logout</a>
+                    <a class="nav-link custom-nav" href="<?= BASEURL;?>/logout">Logout</a>
                 </div>
             </div>
         </div>

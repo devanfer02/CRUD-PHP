@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= BASEURL; ?>/css/style.css">
-    <link rel="icon" href="../public/img/uni_logos/Universitas Brawijaya.png">
+    <link rel="icon" href="<?= BASEURL;?>/img/uni_logos/Universitas Brawijaya.png">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://unpkg.com/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src=aA/scripts/script.js"></script>
     <title><?=$data["title"]?></title>
 </head> 
