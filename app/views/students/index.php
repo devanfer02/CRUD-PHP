@@ -4,7 +4,7 @@
         name="keyword" autofocus autocomplete="off" id="keyword">    
         <input type="hidden" name="search" value="true">    
         <button class="btn btn-outline-success me-2" type="submit" id="btn-search">Search</button>
-        <a href="print.php" class="btn btn-primary" target="_blank">Print</a>
+        <a href="<?=BASEURL;?>/students/print" class="btn btn-primary" target="_blank">Print</a>
     </form>
 </div>
 <div class="row custom-table-container">

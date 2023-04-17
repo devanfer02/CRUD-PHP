@@ -54,4 +54,11 @@ class Students extends Controller
         Flasher::setFlash('Failed','Delete from Database','danger');
         exit;
     }
+
+    public function print()
+    {
+        $data["title"] = "List Students";
+        $data["students"] = $this->model("StudentModel")->getStudents();
+        $this->view('students/print',$data);
+    }
 }
