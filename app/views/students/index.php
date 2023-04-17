@@ -7,6 +7,11 @@
         <a href="print.php" class="btn btn-primary" target="_blank">Print</a>
     </form>
 </div>
+<div class="row custom-table-container">
+    <div class="col-lg-6">
+        <?php Flasher::flash();?>
+    </div>
+</div>
 <div class="custom-table-container">
     <table class="table table-striped" border="1" cellpadding="10" cellspacing="0">
         <thead>

@@ -25,14 +25,12 @@ class Students extends Controller
     {
         if($this->model('StudentModel')->insertStudentData($_POST) > 0)
         {
+            Flasher::setFlash('Success', 'Added to Database', 'success');
             header('Location: ' . BASEURL . '/students');
             exit;
         }
-        echo 
-        "<script>
-            alert('Data failed to add');
-        </script>"; 
-        header('Location: ' . BASEURL . '/students');
+        Flasher::setFlash('Failed','Added to Database','danger');
+        exit;
     }
 
     public function update($id)
