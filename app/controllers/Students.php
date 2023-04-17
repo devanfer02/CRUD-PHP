@@ -21,6 +21,20 @@ class Students extends Controller
         $this->view('templates/footer');
     }
 
+    public function insert()
+    {
+        if($this->model('StudentModel')->insertStudentData($_POST) > 0)
+        {
+            header('Location: ' . BASEURL . '/students');
+            exit;
+        }
+        echo 
+        "<script>
+            alert('Data failed to add');
+        </script>"; 
+        header('Location: ' . BASEURL . '/students');
+    }
+
     public function update($id)
     {
         $data["title"] = "Update Student Detail";

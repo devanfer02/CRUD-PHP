@@ -3,7 +3,7 @@
         <h3>Add Student</h3>
     </div>
     <hr>
-    <form action="" method="post" style="padding-top: 10px; padding-left: 14px">
+    <form action="<?=BASEURL;?>/students/insert" method="post" style="padding-top: 10px; padding-left: 14px">
         <div class="mb-3">
             <label for="nama" class="form-label">Full Name</label>
             <input type="text" class="form-control" name="name" id="name" autocomplete="off" required>
@@ -13,8 +13,8 @@
             <input type="text" class="form-control" name="nim" id="nim" autocomplete="off" required>
         </div>
         <div class="mb-3">
-            <label for="prodi" class="form-label">Major</label>
-            <input type="text" class="form-control" name="prodi" id="prodi" autocomplete="off" required>
+            <label for="major" class="form-label">Major</label>
+            <input type="text" class="form-control" name="major" id="major" autocomplete="off" required>
         </div>
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>
