@@ -45,11 +45,13 @@ class Students extends Controller
 
     public function delete($id)
     {
-        $data["title"] = "Delete Student";
-        $data["students"] = $this->model("StudentModel")->getStudentById($id);
-        $this->view('templates/head',$data);
-        $this->view('templates/navbar');
-        $this->view('students/index',$data);
-        $this->view('templates/footer');
+        if($this->model('StudentModel')->deleteStudentData($id) > 0)
+        {
+            Flasher::setFlash('Success', 'Delete from Database', 'success');
+            header('Location: ' . BASEURL . '/students');
+            exit;
+        }
+        Flasher::setFlash('Failed','Delete from Database','danger');
+        exit;
     }
 }

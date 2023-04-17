@@ -1,14 +1,5 @@
 const BASEURL = 'http://localhost/basics/MVC-PHP/public';
 
-function setThemeMode(mode) {
-    localStorage.setItem('themeMode', mode);
-}
-  
-  // Retrieve the theme mode from localStorage
-function getThemeMode() {
-    return localStorage.getItem('themeMode');
-}
-
 const changeTheme = () => {
     const html = document.querySelector('html');
     const img = document.getElementById('themeToggle');
