@@ -1,9 +1,10 @@
-<div class="custom-table-container">
+<div class="custom-table-container mt-1">
     <form class="d-flex form-inline" role="search" method="post" action="index.php" style="display:inline-block;">
         <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" 
         name="keyword" autofocus autocomplete="off" id="keyword">    
         <input type="hidden" name="search" value="true">    
-        <button class="btn btn-outline-success" type="submit" id="btn-search">Search</button>
+        <button class="btn btn-outline-success me-2" type="submit" id="btn-search">Search</button>
+        <a href="print.php" class="btn btn-primary" target="_blank">Print</a>
     </form>
 </div>
 <div class="custom-table-container">
