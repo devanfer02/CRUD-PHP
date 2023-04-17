@@ -38,6 +38,23 @@ class StudentModel
         return $this->db->rowCount();
     }   
 
+    public function updateStudentData($data)
+    {
+        $query = "UPDATE student SET name = :name, nim = :nim, major = :major,
+        email = :email, university = :university WHERE id = :id";
+        $this->db->query($query);
+        $this->db->bind('name', $data['name']); 
+        $this->db->bind('nim', $data['nim']); 
+        $this->db->bind('major', $data['major']); 
+        $this->db->bind('email', $data['email']); 
+        $this->db->bind('university', $data['university']); 
+        $this->db->bind('id', $data['id']); 
+
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }   
+
     public function deleteStudentData($id)
     {
         $query = "DELETE FROM student WHERE id = :id";

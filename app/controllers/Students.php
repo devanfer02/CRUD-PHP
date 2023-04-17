@@ -33,14 +33,16 @@ class Students extends Controller
         exit;
     }
 
-    public function update($id)
+    public function update()
     {
-        $data["title"] = "Update Student Detail";
-        $data["students"] = $this->model("StudentModel")->getStudentById($id);
-        $this->view('templates/head',$data);
-        $this->view('templates/navbar');
-        $this->view('students/update',$data);
-        $this->view('templates/footer');
+        if($this->model('StudentModel')->updateStudentData($_POST) > 0)
+        {
+            Flasher::setFlash('Success', 'Update to Database', 'success');
+            header('Location: ' . BASEURL . '/students');
+            exit;
+        }
+        Flasher::setFlash('Failed','Update to Database','danger');
+        exit;
     }
 
     public function delete($id)
@@ -60,5 +62,10 @@ class Students extends Controller
         $data["title"] = "List Students";
         $data["students"] = $this->model("StudentModel")->getStudents();
         $this->view('students/print',$data);
+    }
+
+    public function getStudent()
+    {
+        echo json_encode($this->model('StudentModel')->getStudentById($_POST['id']));
     }
 }

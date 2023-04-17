@@ -18,4 +18,3 @@
         </div>
     </nav>
 </header> 
-<script src="<?=APPURL;?>/scripts/script.js" type="module"></script>

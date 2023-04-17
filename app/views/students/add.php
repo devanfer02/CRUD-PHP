@@ -23,7 +23,6 @@
         <div class="mb-3">
             <label for="university" class="form-label">University</label>
             <input type="text" class="form-control" name="university" id="university" autocomplete="off" required>
-            <script src="<?=APPURL;?>/scripts/script.js" type="module"></script>
         </div>
         <button type="submit" class="btn btn-primary" name="submit">Add Data</button>
     </form>

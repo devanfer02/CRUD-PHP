@@ -22,4 +22,6 @@
         </div>
     </div>
 </footer>
+<script src="<?=BASEURL;?>/javascript/script.js"></script>
+<script src="<?=APPURL;?>/scripts/script.js" type="module"></script>
 </html>

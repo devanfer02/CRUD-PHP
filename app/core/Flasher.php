@@ -21,7 +21,6 @@ class Flasher
                 Student Data <strong>' . $_SESSION['flash']['message'] . '</strong> 
                 ' . $_SESSION['flash']['action'] .'
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
                 </button>
             </div>';
             unset($_SESSION['flash']);
