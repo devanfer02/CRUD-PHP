@@ -57,39 +57,70 @@
     <div class="modal modal-lg" id="modalForm" tabindex="-1" aria-labelledby="modalForm">
         <div class="modal-dialog">
             <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="modalFormLabel">Update Student Data</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="" method=""></form>
-                    <input type="hidden" name="id" id="id">
-                    <div class="mb-3">
-                        <label for="nama" class="form-label">Full Name</label>
-                        <input type="text" class="form-control" name="name" id="name" autocomplete="off" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="nim" class="form-label">NIM</label>
-                        <input type="text" class="form-control" name="nim" id="nim" autocomplete="off" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="major" class="form-label">Major</label>
-                        <input type="text" class="form-control" name="major" id="major" autocomplete="off" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="text" class="form-control" name="email" id="email" autocomplete="off" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="university" class="form-label">University</label>
-                        <input type="text" class="form-control" name="university" id="university" autocomplete="off" required>
-                    </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Update Data</button>
-                </form>
-            </div>
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalFormLabel">Update Student Data</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="<?=BASEURL;?>/students/update" method="post"></form>
+                        <input type="hidden" name="id" id="id">
+                        <div class="mb-3">
+                            <label for="nama" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" name="name" id="name" autocomplete="off" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="nim" class="form-label">NIM</label>
+                            <input type="text" class="form-control" name="nim" id="nim" autocomplete="off" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="major" class="form-label">Major</label>
+                            <input type="text" class="form-control" name="major" id="major" autocomplete="off" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="text" class="form-control" name="email" id="email" autocomplete="off" required>
+                        </div>
+                        <div class="mb-3 selector-uni">
+                            <label for="university" class="form-label">University</label>
+                            <select class="form-control" id="university">
+                            </select>
+                            <script>
+                                const universities = 
+                                [
+                                    "Universitas Bina Nusantara",
+                                    "Politeknik Negeri Surabaya",
+                                    "Politeknik Negeri Malang",
+                                    "Univeristas Telkom",
+                                    "Universitas Brawijaya", 
+                                    "Universitas Gadjah Mada",
+                                    "Universitas Indonesia",
+                                    "Universitas Negeri Malang",
+                                    "Universitas Airlangga",
+                                    "Universitas Diponegoro",
+                                    "Universitas Padjajaran",
+                                    "Universitas Sebelas Maret",
+                                    "Universitas Udayana",
+                                    "Universitas Pendidikan Indonesia",
+                                    "Institut Teknologi Sepuluh November",
+                                    "Institut Teknologi Bandung",
+                                    "Institut Pertanian Bogor",
+                                    "Universitas Negeri Jakarta"
+                                ];
+
+                                universities.forEach(function(item) {
+                                    const option = document.createElement('option');
+                                    option.text = item;
+                                    option.value = item;
+                                    university.appendChild(option);
+                                })
+                            </script>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Update Data</button>    
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

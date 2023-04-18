@@ -26,4 +26,4 @@ const autocompleteuni = () => {
     })
 }
 
-export default autocompleteuni;
+export default { autocompleteuni, universities};
