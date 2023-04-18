@@ -22,7 +22,35 @@
         </div>
         <div class="mb-3">
             <label for="university" class="form-label">University</label>
-            <input type="text" class="form-control" name="university" id="university" autocomplete="off" required>
+            <input type="text" class="form-control" name="university" id="university-add-data" autocomplete="off" required>
+            <script>
+                const universities = 
+[
+    "Universitas Bina Nusantara",
+    "Politeknik Negeri Surabaya",
+    "Politeknik Negeri Malang",
+    "Univeristas Telkom",
+    "Universitas Brawijaya", 
+    "Universitas Gadjah Mada",
+    "Universitas Indonesia",
+    "Universitas Negeri Malang",
+    "Universitas Airlangga",
+    "Universitas Diponegoro",
+    "Universitas Padjajaran",
+    "Universitas Sebelas Maret",
+    "Universitas Udayana",
+    "Universitas Pendidikan Indonesia",
+    "Institut Teknologi Sepuluh November",
+    "Institut Teknologi Bandung",
+    "Institut Pertanian Bogor",
+    "Universitas Negeri Jakarta"
+];
+                $(document).ready(() => {
+    $('#university-add-data').autocomplete({
+        source: universities
+    })
+});
+            </script>
         </div>
         <button type="submit" class="btn btn-primary" name="submit">Add Data</button>
     </form>

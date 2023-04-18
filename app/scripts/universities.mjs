@@ -20,10 +20,6 @@ const universities =
     "Universitas Negeri Jakarta"
 ];
 
-const autocompleteuni = () => {
-    $('#university').autocomplete({
-        source: universities
-    })
-}
+universities.sort();
 
-export default { autocompleteuni, universities};
+export default universities;
