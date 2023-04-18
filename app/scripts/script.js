@@ -9,17 +9,10 @@ document.getElementById('themeToggle').addEventListener('click', () => {
 $(document).ready(() => {
     try {
         const universitySelect = $("#university");
-        universitySelect.on("click", () => {
-            universities.forEach((item) => {
-                const option = $("<option>");
-                option.text(item);
-                option.val(item);
-                
-                universitySelect.append(option);
-            });
-        });
+        const options = universities.map(item => `<option value="${item}">${item}</option>`).join('');
+        universitySelect.append(options);
     } catch(error) {
-        //Error
+        console.log({error});
     }
     
     $('#university-add-data').autocomplete({
