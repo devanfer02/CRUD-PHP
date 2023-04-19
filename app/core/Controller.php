@@ -18,8 +18,16 @@ class Controller
         if(!isset($_SESSION['login']) || !$_SESSION['login'])
         {
             header('Location: ' . BASEURL . '/auth/login');
-            return true;
+            exit;
         }
-        return false;
+    }
+
+    public function methodBlock($data, $key, $page)
+    {
+        if(!isset($data[$key]))   
+        {
+            header('Location: ' . BASEURL . $page);
+            exit;
+        }
     }
 }
