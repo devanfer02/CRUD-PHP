@@ -42,10 +42,8 @@ to match your own database name.
 |  nama    |  jenis  | panjang | A_I |
 +----------+---------+---------+-----+
 |  id      |   int   |   11    |  On |
-|  username| varchar |   50    |     |
+|  username| varchar |   100   |     |
 |  password| varchar |   300   |     |
-|  email   | varchar |   100   |     |
-|  name    | varchar |   250   |     |
 +----------+---------+---------+-----+
 ```
 
