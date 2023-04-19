@@ -1,8 +1,10 @@
 $(function() {
     $('.viewModalChange').on('click', function() {
+        console.log("OK");
         $('#modalFormLabel').html('Update Student Data');
         $('.modal-footer button[type=submit]').html('Update Data');
         const id = $(this).data('id');
+        
         
         $.ajax({
             url: 'http://localhost/basics/MVC-PHP/public/students/getStudent',

@@ -63,7 +63,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="<?=BASEURL;?>/students/update" method="post"></form>
+                    <form action="<?=BASEURL;?>/students/update" method="post">
                         <input type="hidden" name="id" id="id">
                         <div class="mb-3">
                             <label for="nama" class="form-label">Full Name</label>
@@ -83,13 +83,14 @@
                         </div>
                         <div class="mb-3 selector-uni">
                             <label for="university" class="form-label">University</label>
-                            <select class="form-control" id="university">
+                            <select class="form-control" id="university" name="university">
                             </select>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Update Data</button>    
-                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Update Data</button>    
+                    </div>
                     </form>
                 </div>
             </div>
