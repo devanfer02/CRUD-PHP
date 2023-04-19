@@ -4,11 +4,7 @@
             Registration 
         </h3>
     </div>
-    <form action="" method="post" style="padding-top: 10px; padding-left: 14px">
-        <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" name="name" id="name" autocomplete="off" required>
-        </div>
+    <form action="<?=BASEURL?>/auth/registerUser" method="post" style="padding-top: 10px; padding-left: 14px">
         <div class="mb-3">
             <label for="username" class="form-label">Username</label>
             <input type="text" class="form-control" name="username" id="username" autocomplete="off" required>
@@ -20,10 +16,6 @@
         <div class="mb-3">
             <label for="confirm" class="form-label">Confirm Password</label>
             <input type="password" class="form-control" name="confirm" id="confirm" autocomplete="off" required>
-        </div>
-        <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="text" class="form-control" name="email" id="email" autocomplete="off" required>
         </div>
         <button type="submit" class="btn btn-primary" name="register">Register</button>
     </form>

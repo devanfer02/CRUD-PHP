@@ -16,4 +16,32 @@ class Auth extends Controller
         $this->view('templates/head', $data);
         $this->view('auth/register', $data);
     }
+
+    public function registerUser()
+    {
+        $success = $this->model('UserModel')->createUser($_POST) > 0;
+
+        if($success)
+        {
+            $user  = $_POST['username'];
+            $_SESSION['name'] = $user;
+            header('Location: ' . BASEURL . '/');
+            exit;
+        }
+    }
+
+    public function loginUser()
+    {
+
+    }
+
+    public function logout()
+    {
+        $_SESSION = [];
+        session_unset();
+        session_destroy();
+        if(!session_id()) session_start();
+
+        header('Location: ' . BASEURL . '/auth/login');
+    }
 }

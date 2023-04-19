@@ -48,17 +48,6 @@ to match your own database name.
 |  name    | varchar |   250   |     |
 +----------+---------+---------+-----+
 ```
-- Make a table with name ```logchanges``` with given category
-```
-+----------+---------+---------+-----+
-|  nama    |  jenis  | panjang | A_I |
-+----------+---------+---------+-----+
-|  id      |   int   |   11    |  On |
-|  admin   | varchar |   250   |     |
-|  action  | varchar |   250   |     |
-|  time    | varchar |   250   |     |
-+----------+---------+---------+-----+
-```
 
 ### Clone this project
 - Clone this project using whatever you like 

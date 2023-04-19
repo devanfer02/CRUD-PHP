@@ -10,9 +10,18 @@ class UserModel
         $this->db = new Database;
     }
 
-    public function createUser($username, $password)
+    public function createUser($data)
     {
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $username = $data['username'];
+        $password = $data['password'];
+        $confirm = $data['confirm'];    
+
+        if($password !== $confirm)
+        {
+            return;
+        }
+
+        $password = password_hash($password, PASSWORD_DEFAULT);
         $query = "INSERT INTO users VALUES('', :username, :password)";
 
         $this->db->query($query);

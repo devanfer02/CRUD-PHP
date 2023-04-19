@@ -10,7 +10,7 @@
                     <a class="nav-link custom-nav" href="<?= BASEURL;?>/students">List Students</a>
                     <a class="nav-link custom-nav" href="<?= BASEURL;?>/students/add">Add Student</a>
                     <a class="nav-link custom-nav" href="<?= BASEURL;?>/about">About</a>
-                    <a class="nav-link custom-nav" href="<?= BASEURL;?>/logout">Logout</a>     
+                    <a class="nav-link custom-nav" href="<?= BASEURL;?>/auth/logout">Logout</a>     
                 </div>
                 <img src="<?=BASEURL;?>/icons/icons8-dark-mode-24.png" alt="" id="themeToggle" style="margin-left: 10px;">
             </div>
