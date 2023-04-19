@@ -1,8 +1,8 @@
 <body>
     <div class="container mt-5">
         <div class="row">
-        <div class="col-md-6">
-            <img src="<?=BASEURL;?>/img/profile.jpg" alt="Devan F" class="img-fluid rounded-circle" style="width:75%">
+        <div class="col-md-6 ">
+            <img src="<?=BASEURL;?>/img/profile.jpg" alt="Devan F" class="img-fluid rounded-circle" style="width:65%; margin-left:100px;">
         </div>
         <div class="col-md-6" id="about">
             <h2>About Me</h2>

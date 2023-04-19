@@ -35,6 +35,7 @@ class Students extends Controller
 
     public function update()
     {
+        echo json_encode($_POST);
         if($this->model('StudentModel')->updateStudentData($_POST) > 0)
         {
             Flasher::setFlash('Success', 'Update to Database', 'success');
@@ -62,6 +63,21 @@ class Students extends Controller
         $data["title"] = "List Students";
         $data["students"] = $this->model("StudentModel")->getStudents();
         $this->view('students/print',$data);
+    }
+
+    public function search()
+    {
+        if(!isset($_POST["keyword"]))
+        {
+            $this->index();
+            exit;
+        }
+        $data["title"] = "List Students";
+        $data["students"] = $this->model("StudentModel")->findStudent();
+        $this->view('templates/head',$data);
+        $this->view('templates/navbar');
+        $this->view('students/index',$data);
+        $this->view('templates/footer');
     }
 
     public function getStudent()

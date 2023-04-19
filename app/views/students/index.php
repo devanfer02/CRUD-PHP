@@ -1,5 +1,6 @@
-<div class="custom-table-container mt-1">
-    <form class="d-flex form-inline" role="search" method="post" action="index.php" style="display:inline-block;">
+<div class="custom-table-container mt-2">
+    <form class="d-flex form-inline" role="search" method="post" action="<?=BASEURL;?>/students/search" 
+    style="display:inline-block;">
         <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" 
         name="keyword" autofocus autocomplete="off" id="keyword">    
         <input type="hidden" name="search" value="true">    
@@ -42,7 +43,7 @@
 
                 </td>
                 <td style="text-align:center;">
-                    <img src="../public/img/uni_logos/<?= $student["university"]?>.png" width="50" height="50" alt="" style="vertical-align:middle;">
+                    <img src="<?=BASEURL?>/img/uni_logos/<?= $student["university"]?>.png" width="50" height="50" alt="" style="vertical-align:middle;">
                 </td>
                 <td><?= $student["nim"]?></td>
                 <td><?= $student["name"]?></td>
@@ -84,9 +85,6 @@
                             <label for="university" class="form-label">University</label>
                             <select class="form-control" id="university">
                             </select>
-                            <script>
-                                
-                            </script>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
