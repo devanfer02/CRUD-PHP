@@ -4,6 +4,11 @@ class About extends Controller
 {
     public function index()
     {
+        $check = $this->block();
+        if($check) 
+        {
+            return;
+        }
         $data["title"] = "About";
         $this->view('templates/head',$data);
         $this->view('templates/navbar');

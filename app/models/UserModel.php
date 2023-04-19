@@ -33,9 +33,10 @@ class UserModel
         return $this->db->rowCount();
     }
 
-    public function verifiyUser($username, $password)
+    public function verifyUser($data)
     {
-        $user = $this->getUserByUsername($username);
+        $user = $this->getUserByUsername($data['username']);
+        $password = $data['password'];
 
         if(!isset($user))
         {   
@@ -48,6 +49,7 @@ class UserModel
     public function getUserByUsername($username)
     {
         $query = "SELECT * FROM users WHERE username = :username";
+        $this->db->query($query);
         $this->db->bind('username', $username);
 
         return $this->db->singleSet();

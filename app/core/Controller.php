@@ -12,4 +12,14 @@ class Controller
         require '../app/models/' . $model . '.php';
         return new $model;
     }
+
+    public function block()
+    {
+        if(!isset($_SESSION['login']) || !$_SESSION['login'])
+        {
+            header('Location: ' . BASEURL . '/auth/login');
+            return true;
+        }
+        return false;
+    }
 }

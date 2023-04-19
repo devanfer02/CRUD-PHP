@@ -25,6 +25,7 @@ class Auth extends Controller
         {
             $user  = $_POST['username'];
             $_SESSION['name'] = $user;
+            $_SESSION['login'] = true;
             header('Location: ' . BASEURL . '/');
             exit;
         }
@@ -32,7 +33,16 @@ class Auth extends Controller
 
     public function loginUser()
     {
+        $success = $this->model('UserModel')->verifyUser($_POST);
 
+        if($success)
+        {
+            $user  = $_POST['username'];
+            $_SESSION['name'] = $user;
+            $_SESSION['login'] = true;
+            header('Location: ' . BASEURL . '/');
+            exit;
+        }
     }
 
     public function logout()

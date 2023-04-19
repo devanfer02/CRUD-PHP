@@ -6,18 +6,18 @@
                     <h3 class="text-center">Login</h3>
             </div>
             <div class="card-body">
-                <form action="" method="post" >
+                <form action="<?=BASEURL?>/auth/loginUser" method="post" >
                     <div class="form-group">
                         <label for="username" class="label">Username</label>
                         <input type="text" class="form-control" id="username" name="username"
                         autocomplete="off" required>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group mt-3">
                         <label for="password" class="label">Password</label>
                         <input type="password" class="form-control" id="password" name="password"
                         autocomplete="off" required>
                     </div>
-                    <div class="form-check">
+                    <div class="form-check mt-3">
                         <input type="checkbox" class="form-check-input" name="remember" id="remember">
                         <label class="form-check-label" for="remember">
                             Remember Me
