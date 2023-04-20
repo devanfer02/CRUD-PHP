@@ -52,6 +52,10 @@ to match your own database name.
 - Make sure the folder is inside the htdocs 
 - Also run the command ```composer install``` to install all dependancies required
 
+### Modify the configs
+- Search all the localhost/basics occurences in this repo
+- change it to your own folder
+
 ### Start Localhost
 - Go to localhost/dashboard
 - Change the dashboard with the name of the project folder
