@@ -1,10 +1,8 @@
 # Getting Ready to Set Up PHP CRUD
 
 ## CRUD PHP 
-This repository contains a simple crud webapp using php and mysql <br>
+This repository contains a simple crud webapp using php, mysql and mvc concept<br>
 To play with this crud webapp please followw the following instructions
-
-#### NOTE : THIS BRANCH IS STILL IN WORK IN PROGRESS, CURRENTLY MIGRATING FROM MAIN(procedural) TO MASTER(object orriented)
 
 ## Set Up PHP CRUD
 ### Installing xampp in your pc
