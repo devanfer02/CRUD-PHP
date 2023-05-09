@@ -4,7 +4,7 @@ class Students extends Controller
 {
     public function index()
     {
-        $check = $this->block();
+        $this->block();
         $data["title"] = "List Students";
         $data["students"] = $this->model("StudentModel")->getStudents();
         $this->view('templates/head',$data);
@@ -15,7 +15,7 @@ class Students extends Controller
 
     public function add() 
     {
-        $check = $this->block();
+        $this->block();
         $data["title"] = "Add Student";
         $this->view('templates/head',$data);
         $this->view('templates/navbar');
@@ -25,7 +25,6 @@ class Students extends Controller
 
     public function insert()
     {
-        $this->methodBlock($_POST, $name, '/students/add');
         if($this->model('StudentModel')->insertStudentData($_POST) > 0)
         {
             Flasher::setFlash('Success', 'Added to Database', 'success');
