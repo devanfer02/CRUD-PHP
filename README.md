@@ -47,7 +47,7 @@ to match your own database name.
 
 ### Clone this project
 - Clone this project using whatever you like 
-- Make sure the folder is inside the htdocs 
+- Make sure the folder is inside the htdocs/basics 
 - Also run the command ```composer install``` to install all dependancies required
 
 ### Modify the configs
